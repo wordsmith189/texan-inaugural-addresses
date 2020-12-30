@@ -4,6 +4,7 @@ description: |
   Texan Inaugural Addresses
 output_dir: "_site"
 navbar:
+  logo: lbj.jpg
   right:
     - text: "Home"
       href: index.html

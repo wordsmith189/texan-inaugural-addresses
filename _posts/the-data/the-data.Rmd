@@ -18,23 +18,38 @@ bibliography: references.bib
 knitr::opts_chunk$set(echo = F,
                       cache = T)
 library(pacman)
-p_load(tidyverse, tidytext, tm, quanteda)
+p_load(tidyverse, tidytext, tm, quanteda,
+       knitr, kableExtra)
 ```
 
 ## Scope of the data
 
 We analyze the inaugural addresses of the "Texan" presidents. These are
 
--   Lindon B. Johnson
--   George H.W. Bush
--   George W. Bush
+-   Lindon B. Johnson (1)
+-   George H.W. Bush (1)
+-   George W. Bush (2)
 
 To justify this choice, it is important to note that we are interested in "culturally" Texan presidents. If we were interested in place of birth, we'd also have to include Eisenhower (born in TX but didn't live there), and not the Bushes (born outside of TX but lived there).
+
+```{r lbj-img}
+include_graphics("lbj.inaug.jpg")
+```
 
 ## Source of the data
 
 We're using the version of the speeches that is included in the `quanteda` R-package [@benoit2018]. The following code grabs the speeches from the package in the `corpus` data format, then converts it to a regular dataframe.
 
-```{r get-data}
-
+```{r get-data, echo=T}
+txpres <- c("Johnson", "Bush")
+corpus <- data_corpus_inaugural %>% 
+  convert(to = "data.frame") %>% 
+  filter(President %in% txpres)
+corpus %>% 
+  mutate(text = str_sub(text, 1, 40)) %>% 
+  as_tibble() %>% 
+  kbl() %>% 
+  kable_paper()
 ```
+
+Down the line, this data can be tokenized and/or marked up as needed.
