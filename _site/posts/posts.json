@@ -15,5 +15,22 @@
     "preview": "posts/the-data/lbj.inaug.jpg",
     "last_modified": "2020-12-30T15:46:19-05:00",
     "input_file": "the-data.utf8.md"
+  },
+  {
+    "path": "posts/numeric-measures/",
+    "title": "Numeric Measures",
+    "description": "Sentence lengths, number of words, etc.",
+    "author": [
+      {
+        "name": "Lars Hinrichs",
+        "url": "https://larshinrichs.site"
+      }
+    ],
+    "date": "2020-12-30",
+    "categories": [],
+    "contents": "\n\n\n\n\n\n\n\n\n\n",
+    "preview": "posts/numeric-measures/measure.jpg",
+    "last_modified": "2020-12-30T15:52:32-05:00",
+    "input_file": "numeric-measures.utf8.md"
   }
 ]

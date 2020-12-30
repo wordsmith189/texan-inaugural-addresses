@@ -24,3 +24,7 @@ p_load(tidyverse, tidytext, tm, quanteda,
 ```{r load-data}
 corpus <- import("../../data/corpus.RDS")
 ```
+
+```{r img}
+include_graphics("measure.jpg")
+```
