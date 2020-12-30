@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = F,
                       cache = T)
 library(pacman)
 p_load(tidyverse, tidytext, tm, quanteda,
-       knitr, kableExtra)
+       knitr, kableExtra, rio)
 ```
 
 ## Scope of the data
@@ -43,8 +43,15 @@ We're using the version of the speeches that is included in the `quanteda` R-pac
 ```{r get-data, echo=T}
 txpres <- c("Johnson", "Bush")
 corpus <- data_corpus_inaugural %>% 
-  convert(to = "data.frame") %>% 
-  filter(President %in% txpres)
+  quanteda::convert(to = "data.frame") %>% 
+  filter(President %in% txpres) %>% 
+  mutate(nickname = case_when(
+    FirstName == "Lyndon Baines" ~ "LBJ",
+    FirstName == "George" ~ "Bush41",
+    TRUE ~ "Bush43"
+  )) %>% 
+  janitor::clean_names()
+
 corpus %>% 
   mutate(text = str_sub(text, 1, 40)) %>% 
   as_tibble() %>% 
@@ -52,4 +59,8 @@ corpus %>%
   kable_paper()
 ```
 
-Down the line, this data can be tokenized and/or marked up as needed.
+Down the line, this data can be tokenized and/or marked up as needed. We'll save this version so we can come back to it.
+
+```{r save-data}
+corpus %>% export("../../data/corpus.RDS")
+```

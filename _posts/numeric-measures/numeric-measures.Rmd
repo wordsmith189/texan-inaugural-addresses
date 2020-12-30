@@ -1,0 +1,26 @@
+---
+title: "Numeric Measures"
+description: |
+  Sentence lengths, number of words, etc.
+author:
+  - name: Lars Hinrichs
+    url: https://larshinrichs.site
+    affiliation: The University of Texas at Austin
+date: 12-30-2020
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      cache = T)
+library(pacman)
+p_load(tidyverse, tidytext, tm, quanteda,
+       knitr, kableExtra, rio)
+```
+
+```{r load-data}
+corpus <- import("../../data/corpus.RDS")
+```
