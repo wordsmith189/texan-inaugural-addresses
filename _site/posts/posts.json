@@ -1,0 +1,36 @@
+[
+  {
+    "path": "posts/welcome/",
+    "title": "Welcome to Texan Inaugural Addresses",
+    "description": "Welcome to our new blog, Texan Inaugural Addresses. We hope you enjoy \nreading what we have to say!",
+    "author": [
+      {
+        "name": "Nora Jones",
+        "url": "https://example.com/norajones"
+      }
+    ],
+    "date": "2020-12-30",
+    "categories": [],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2020-12-30T14:58:48-05:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/the-data/",
+    "title": "The Data",
+    "description": "Scope, source, and preparation of the data.",
+    "author": [
+      {
+        "name": "Lars Hinrichs",
+        "url": "https://larshinrichs.site"
+      }
+    ],
+    "date": "2020-12-30",
+    "categories": [],
+    "contents": "\n\nContents\nScope of the data\n\nScope of the data\nWe analyze the inaugural addresses of the “Texan” presidents. These are\nLindon B. Johnson\nGeorge H.W. Bush\nGeorge W. Bush\nTo justify this choice, it is important to note that we are interested in “culturally” Texan presidents. If we were interested in place of birth, we’d also have to include Eisenhower (born in TX but didn’t live there), and not the Bushes (born outside of TX but lived there).\n\n\n\n",
+    "preview": {},
+    "last_modified": "2020-12-30T15:06:58-05:00",
+    "input_file": "the-data.utf8.md"
+  }
+]

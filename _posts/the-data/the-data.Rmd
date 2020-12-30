@@ -1,0 +1,40 @@
+---
+title: "The Data"
+description: |
+  Scope, source, and preparation of the data.
+author:
+  - name: Lars Hinrichs
+    url: https://larshinrichs.site
+    affiliation: The University of Texas at Austin
+date: 12-30-2020
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F,
+                      cache = T)
+library(pacman)
+p_load(tidyverse, tidytext, tm, quanteda)
+```
+
+## Scope of the data
+
+We analyze the inaugural addresses of the "Texan" presidents. These are
+
+-   Lindon B. Johnson
+-   George H.W. Bush
+-   George W. Bush
+
+To justify this choice, it is important to note that we are interested in "culturally" Texan presidents. If we were interested in place of birth, we'd also have to include Eisenhower (born in TX but didn't live there), and not the Bushes (born outside of TX but lived there).
+
+## Source of the data
+
+We're using the version of the speeches that is included in the `quanteda` R-package [@benoit2018]. The following code grabs the speeches from the package in the `corpus` data format, then converts it to a regular dataframe.
+
+```{r get-data}
+
+```
