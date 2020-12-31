@@ -1,18 +1,16 @@
 ---
-title: "3 Keywords"
+title: "4 complexity"
 description: |
-  Which keywords and ngrams are important?
+  A short description of the post.
 author:
   - name: Lars Hinrichs
     url: https://larshinrichs.site
-    affiliation: The University of Texas at Austin
-date: 12-24-2020
+date: 12-23-2020
 draft: true
 output:
   distill::distill_article:
     self_contained: false
 ---
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
@@ -23,8 +21,6 @@ p_load(tidyverse, tidytext, tm, quanteda,
 ```
 
 ```{r show-img}
-include_graphics("key.png")
+include_graphics("complexity.jpg")
 ```
-
-
 
