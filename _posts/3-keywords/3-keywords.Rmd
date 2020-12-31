@@ -1,0 +1,29 @@
+---
+title: "3 Keywords"
+description: |
+  Which keywords and ngrams are important?
+author:
+  - name: Lars Hinrichs
+    url: https://larshinrichs.site
+    affiliation: The University of Texas at Austin
+date: 12-24-2020
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      cache = T)
+library(pacman)
+p_load(tidyverse, tidytext, tm, quanteda,
+       knitr, kableExtra, rio)
+```
+
+```{r show-img}
+include_graphics("key.png")
+```
+
+
+

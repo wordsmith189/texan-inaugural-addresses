@@ -3,8 +3,10 @@ title: "Texan Inaugural Addresses"
 description: |
   Texan Inaugural Addresses
 output_dir: "_site"
+base_url: https://texan-inaugurals.netlify.app
 navbar:
   logo: lbj.jpg
+  search: false
   right:
     - text: "Home"
       href: index.html

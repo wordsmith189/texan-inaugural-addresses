@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
+  <url>
+    <loc>https://texan-inaugurals.netlify.app/about.html</loc>
+    <lastmod>2020-12-30T14:58:44-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://texan-inaugurals.netlify.app/</loc>
+    <lastmod>2020-12-30T14:58:44-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://texan-inaugurals.netlify.app/posts/1-the-data/</loc>
+    <lastmod>2020-12-30T19:38:37-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://texan-inaugurals.netlify.app/posts/2-numeric-measures/</loc>
+    <lastmod>2020-12-30T19:39:50-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://texan-inaugurals.netlify.app/posts/3-keywords/</loc>
+    <lastmod>2020-12-30T19:49:44-05:00</lastmod>
+  </url>
+</urlset>
