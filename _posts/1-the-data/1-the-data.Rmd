@@ -1,12 +1,12 @@
 ---
-title: "The Data"
+title: "1 The Data"
 description: |
   Scope, source, and preparation of the data.
 author:
   - name: Lars Hinrichs
     url: https://larshinrichs.site
     affiliation: The University of Texas at Austin
-date: 12-30-2020
+date: 12-25-2020
 output:
   distill::distill_article:
     self_contained: false
