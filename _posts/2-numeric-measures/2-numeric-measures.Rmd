@@ -15,7 +15,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
-                      cache = T)
+                      cache = F)
 library(pacman)
 p_load(tidyverse, tidytext, tm, quanteda,
        knitr, kableExtra, rio)
@@ -28,3 +28,79 @@ corpus <- import("../../data/corpus.RDS")
 ```{r img}
 include_graphics("measure.jpg")
 ```
+
+## Words
+
+Here is the overall length of each address.
+
+```{r}
+pal <- wesanderson::wes_palette("GrandBudapest1", 3)
+
+nwords <- 
+  corpus %>% 
+  unnest_tokens(word, text) %>% 
+  count(first_name, doc_id) %>% 
+  rename(n_words = n)
+
+nwords %>% 
+  #---------------------------#
+  ggplot(aes(x = doc_id,
+             y = n_words,
+             fill = first_name)) +
+  geom_col(width = .45) +
+  scale_fill_manual(values=pal) +
+  labs(title = "Number of words") +
+  theme_classic(base_family = "serif") +
+  theme(legend.position = "none",
+        axis.title = element_blank())
+```
+
+
+## Sentences
+
+Number of sentences in each address.
+
+```{r}
+nsents <- 
+  corpus %>% 
+  unnest_tokens(sentence, text, token = "sentences") %>% 
+  count(first_name, doc_id) %>% 
+  rename(n_sents = n)
+
+nsents %>% 
+  #---------------------------#
+  ggplot(aes(x = doc_id,
+             y = n_sents,
+             fill = first_name)) +
+  geom_col(width = .45) +
+  scale_fill_manual(values=pal) +
+  labs(title = "Number of sentences") +
+  theme_classic(base_family = "serif") +
+  theme(legend.position = "none",
+        axis.title = element_blank())
+```
+
+## Number of words per sentence
+
+Who used the longest sentences?
+
+```{r}
+rate <- 
+  nwords %>% 
+  left_join(nsents) %>% 
+  mutate(s_length = n_words / n_sents)
+
+rate %>% 
+  #---------------------------#
+  ggplot(aes(x = doc_id,
+             y = s_length,
+             fill = first_name)) +
+  geom_col(width = .45) +
+  scale_fill_manual(values=pal) +
+  labs(title = "Number of words per sentence") +
+  theme_classic(base_family = "serif") +
+  theme(legend.position = "none",
+        axis.title = element_blank())
+```
+
+
