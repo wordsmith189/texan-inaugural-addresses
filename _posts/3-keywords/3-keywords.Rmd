@@ -7,7 +7,7 @@ author:
     url: https://larshinrichs.site
     affiliation: The University of Texas at Austin
 date: 12-24-2020
-draft: true
+draft: false
 output:
   distill::distill_article:
     self_contained: false
@@ -15,16 +15,92 @@ output:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE,
-                      cache = T)
+knitr::opts_chunk$set(echo = F,
+                      cache = F)
 library(pacman)
 p_load(tidyverse, tidytext, tm, quanteda,
-       knitr, kableExtra, rio)
+       knitr, kableExtra, rio, extrafont,
+       SnowballC)
 ```
 
 ```{r show-img}
 include_graphics("key.png")
 ```
 
+```{r load-data}
+corpus <- import("../../data/corpus.RDS")
+```
+
+## Most frequent words
+
+For the first analysis we'll remove stopwords (see a [definition of stopwords here](https://en.wikipedia.org/wiki/Stop_word)). And then we will count the occurrences of each distinct word and see what's most frequent!
+
+```{r make-plots}
+pal <- wesanderson::wes_palette("GrandBudapest1", 4)
+
+inaugurals_words <- 
+  corpus %>% 
+  unnest_tokens(word, text) %>% 
+  #mutate(word = wordStem(word)) %>% 
+  count(doc_id, word, sort = T)
+
+inaugurals_total_n <- 
+  inaugurals_words %>% 
+  group_by(doc_id) %>% 
+  summarize(total = sum(n))
+
+inaugurals_words <- 
+  inaugurals_words %>% 
+  left_join(inaugurals_total_n)
+
+inaugurals_toplot <- inaugurals_words %>%
+  #bind_tf_idf(word, author, n) %>%
+  filter(!word %in% stop_words$word) %>% 
+  mutate(
+    freq = n/total,
+    nwords = n
+    )
+
+docs <- inaugurals_toplot %>% 
+  pull(doc_id) %>% 
+  as.character() %>% 
+  unique()
+
+pfunct <- 
+  function(dat, i){ 
+  dat %>%
+    filter(doc_id == 
+           docs[i]) %>% 
+    head(15) %>% 
+    #mutate(word = reorder(word, freq)) %>%
+    ggplot(aes(x = reorder(word, nwords), 
+               y = nwords)) +
+    geom_col(show.legend = FALSE,
+             width = 0.45,
+             fill = pal[i]) +
+    coord_flip() +
+    labs(x = "", y = "",
+         title = docs[i]) +
+    theme_classic(base_family = "Arial Narrow",
+                  base_size = 14)
+}
+
+```
 
 
+
+```{r p2}
+pfunct(inaugurals_toplot, 2)
+```
+
+```{r p3}
+pfunct(inaugurals_toplot, 3)
+```
+
+```{r p4}
+pfunct(inaugurals_toplot, 4)
+```
+
+```{r p1}
+pfunct(inaugurals_toplot, 1)
+```

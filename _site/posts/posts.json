@@ -45,9 +45,9 @@
     ],
     "date": "2020-12-24",
     "categories": [],
-    "contents": "\n\n\n\n\n\n\n",
+    "contents": "\n\n\n\n\n\n\nMost frequent words\nFor the first analysis we’ll remove stopwords (see a definition of stopwords here). And then we will count the occurrences of each distinct word and see what’s most frequent!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
     "preview": "posts/3-keywords/key.png",
-    "last_modified": "2020-12-30T19:49:44-05:00",
+    "last_modified": "2021-01-03T14:11:49-05:00",
     "input_file": "3-keywords.utf8.md",
     "preview_width": 606,
     "preview_height": 185
