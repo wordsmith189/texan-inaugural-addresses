@@ -15,7 +15,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F,
-                      cache = T)
+                      cache = F)
 library(pacman)
 p_load(tidyverse, tidytext, tm, quanteda,
        knitr, kableExtra, rio, extrafont,
@@ -41,7 +41,9 @@ inaugurals_words <-
   corpus %>% 
   unnest_tokens(word, text) %>% 
   mutate(word = recode(word,
-                       `america's` = "america")) %>% 
+                       `america's` = "america",
+                       american = "america",
+                       americans = "america")) %>% 
   count(doc_id, word, sort = T)
 
 inaugurals_total_n <- 
@@ -81,16 +83,16 @@ pfunct <-
     coord_flip() +
     labs(x = "", y = "frequency in text",
          title = docs[i]) +
-    theme_classic(base_family = "Arial Narrow",
+    theme_classic(base_family = "serif",
                   base_size = 14)
 }
 
 ```
 
 ```{r printplots1-4, layout="l-outset", fig.height=8, fig.cap="Top 15 terms in each Texan inaugural address by raw frequency."}
-p1 <- pfunct(inaugurals_toplot, 2)
+p1 <- pfunct(inaugurals_toplot, 3)
 p2 <- pfunct(inaugurals_toplot, 4)
-p3 <- pfunct(inaugurals_toplot, 3)
+p3 <- pfunct(inaugurals_toplot, 2)
 p4 <- pfunct(inaugurals_toplot, 1)
 plot_grid(p1, p2, p3, p4, ncol=2)
 ```
@@ -127,15 +129,15 @@ pfunct2 <-
     coord_flip() +
     labs(x = "", y = "tf_idf",
          title = docs[i]) +
-    theme_classic(base_family = "Arial Narrow",
+    theme_classic(base_family = "serif",
                   base_size = 14)
 }
 ```
 
 ```{r printplots5-8, layout="l-outset", fig.height=8, fig.cap="Top 15 terms in each Texan inaugural address by tf-idf."}
-p5 <- pfunct2(inaugurals_tf_idf, 2)
+p5 <- pfunct2(inaugurals_tf_idf, 3)
 p6 <- pfunct2(inaugurals_tf_idf, 4)
-p7 <- pfunct2(inaugurals_tf_idf, 3)
+p7 <- pfunct2(inaugurals_tf_idf, 2)
 p8 <- pfunct2(inaugurals_tf_idf, 1)
 plot_grid(p5, p6, p7, p8, ncol=2)
 ```
