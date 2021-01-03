@@ -1,7 +1,7 @@
 ---
 title: "3 Keywords"
 description: |
-  Which keywords and ngrams are important?
+  Which keywords are frequent, and which are significant?
 author:
   - name: Lars Hinrichs
     url: https://larshinrichs.site
@@ -13,14 +13,13 @@ output:
     self_contained: false
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F,
-                      cache = F)
+                      cache = T)
 library(pacman)
 p_load(tidyverse, tidytext, tm, quanteda,
        knitr, kableExtra, rio, extrafont,
-       SnowballC)
+       cowplot)
 ```
 
 ```{r show-img}
@@ -41,7 +40,8 @@ pal <- wesanderson::wes_palette("GrandBudapest1", 4)
 inaugurals_words <- 
   corpus %>% 
   unnest_tokens(word, text) %>% 
-  #mutate(word = wordStem(word)) %>% 
+  mutate(word = recode(word,
+                       `america's` = "america")) %>% 
   count(doc_id, word, sort = T)
 
 inaugurals_total_n <- 
@@ -79,7 +79,7 @@ pfunct <-
              width = 0.45,
              fill = pal[i]) +
     coord_flip() +
-    labs(x = "", y = "",
+    labs(x = "", y = "frequency in text",
          title = docs[i]) +
     theme_classic(base_family = "Arial Narrow",
                   base_size = 14)
@@ -87,20 +87,55 @@ pfunct <-
 
 ```
 
-
-
-```{r p2}
-pfunct(inaugurals_toplot, 2)
+```{r printplots1-4, layout="l-outset", fig.height=8, fig.cap="Top 15 terms in each Texan inaugural address by raw frequency."}
+p1 <- pfunct(inaugurals_toplot, 2)
+p2 <- pfunct(inaugurals_toplot, 4)
+p3 <- pfunct(inaugurals_toplot, 3)
+p4 <- pfunct(inaugurals_toplot, 1)
+plot_grid(p1, p2, p3, p4, ncol=2)
 ```
 
-```{r p3}
-pfunct(inaugurals_toplot, 3)
+## Most important words by tf-idf
+
+An advanced measure of the importance of words in documents is `tf-idf`. It is calculated using a formula that takes into account both each word's raw frequency as well as the number of documents in the corpus in which it is used. This method is a way of finding out **the most distinctive words in each text**.
+
+<aside>`tf-idf` is defined in detail [here](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).</aside>
+
+For example, in the context at hand, you might expect that each of the four speeches contains the words *freedom* or *people*. And while it is certainly interesting which president used them the most, these words aren't really distinctive, simply because each president uses them on this occasion. But it's instructive to look at the words that are *both frequent and unique* to each speech.
+
+```{r}
+inaugurals_tf_idf <- 
+  inaugurals_words %>%
+  bind_tf_idf(word, doc_id, n) %>% 
+  select(-total) %>%
+  anti_join(stop_words) %>% 
+  arrange(desc(tf_idf))
 ```
 
-```{r p4}
-pfunct(inaugurals_toplot, 4)
+```{r tf-idf}
+pfunct2 <- 
+  function(dat, i){ 
+  dat %>%
+    filter(doc_id == 
+           docs[i]) %>% 
+    head(15) %>% 
+    ggplot(aes(x = reorder(word, tf_idf), 
+               y = tf_idf)) +
+    geom_col(show.legend = FALSE,
+             width = 0.45,
+             fill = pal[i]) +
+    coord_flip() +
+    labs(x = "", y = "tf_idf",
+         title = docs[i]) +
+    theme_classic(base_family = "Arial Narrow",
+                  base_size = 14)
+}
 ```
 
-```{r p1}
-pfunct(inaugurals_toplot, 1)
+```{r printplots5-8, layout="l-outset", fig.height=8, fig.cap="Top 15 terms in each Texan inaugural address by tf-idf."}
+p5 <- pfunct2(inaugurals_tf_idf, 2)
+p6 <- pfunct2(inaugurals_tf_idf, 4)
+p7 <- pfunct2(inaugurals_tf_idf, 3)
+p8 <- pfunct2(inaugurals_tf_idf, 1)
+plot_grid(p5, p6, p7, p8, ncol=2)
 ```

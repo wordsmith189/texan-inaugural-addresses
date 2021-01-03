@@ -36,7 +36,7 @@
   {
     "path": "posts/3-keywords/",
     "title": "3 Keywords",
-    "description": "Which keywords and ngrams are important?",
+    "description": "Which keywords are frequent, and which are significant?",
     "author": [
       {
         "name": "Lars Hinrichs",
@@ -45,9 +45,9 @@
     ],
     "date": "2020-12-24",
     "categories": [],
-    "contents": "\n\n\n\n\n\n\nMost frequent words\nFor the first analysis we’ll remove stopwords (see a definition of stopwords here). And then we will count the occurrences of each distinct word and see what’s most frequent!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "contents": "\n\n\n\n\n\n\nMost frequent words\nFor the first analysis we’ll remove stopwords (see a definition of stopwords here). And then we will count the occurrences of each distinct word and see what’s most frequent!\n\n\n\n\n\n\nFigure 1: Top 15 terms in each Texan inaugural address by raw frequency.\n\n\n\nMost important words by tf-idf\nAn advanced measure of the importance of words in documents is tf-idf. It is calculated using a formula that takes into account both each word’s raw frequency as well as the number of documents in the corpus in which it is used. This method is a way of finding out the most distinctive words in each text.\ntf-idf is defined in detail here.\nFor example, in the context at hand, you might expect that each of the four speeches contains the words freedom or people. And while it is certainly interesting which president used them the most, these words aren’t really distinctive, simply because each president uses them on this occasion. But it’s instructive to look at the words that are both frequent and unique to each speech.\n\n\n\n\n\n\n\n\n\nFigure 2: Top 15 terms in each Texan inaugural address by tf-idf.\n\n\n\n\n\n\n",
     "preview": "posts/3-keywords/key.png",
-    "last_modified": "2021-01-03T14:11:49-05:00",
+    "last_modified": "2021-01-03T15:14:10-05:00",
     "input_file": "3-keywords.utf8.md",
     "preview_width": 606,
     "preview_height": 185
