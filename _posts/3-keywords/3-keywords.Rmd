@@ -83,8 +83,8 @@ pfunct <-
     coord_flip() +
     labs(x = "", y = "frequency in text",
          title = docs[i]) +
-    theme_classic(base_family = "serif",
-                  base_size = 14)
+    theme_classic(base_family = "Volkhov-Regular",
+                  base_size = 12)
 }
 
 ```
@@ -129,8 +129,8 @@ pfunct2 <-
     coord_flip() +
     labs(x = "", y = "tf_idf",
          title = docs[i]) +
-    theme_classic(base_family = "serif",
-                  base_size = 14)
+    theme_classic(base_family = "Volkhov-Regular",
+                  base_size = 12)
 }
 ```
 
