@@ -1,7 +1,7 @@
 ---
 title: "3 Keywords"
 description: |
-  Which keywords are frequent, and which are significant?
+  Which terms are frequent, and which are significant?
 author:
   - name: Lars Hinrichs
     url: https://larshinrichs.site
@@ -35,7 +35,8 @@ corpus <- import("../../data/corpus.RDS")
 For the first analysis we'll remove stopwords (see a [definition of stopwords here](https://en.wikipedia.org/wiki/Stop_word)). And then we will count the occurrences of each distinct word and see what's most frequent!
 
 ```{r make-plots}
-pal <- wesanderson::wes_palette("GrandBudapest1", 4)
+pal <- wesanderson::wes_palette("Zissou1", 5, 
+                                type="continuous")[2:5]
 
 inaugurals_words <- 
   corpus %>% 
@@ -43,7 +44,9 @@ inaugurals_words <-
   mutate(word = recode(word,
                        `america's` = "america",
                        american = "america",
-                       americans = "america")) %>% 
+                       americans = "america",
+                       mine = "my",
+                       `other's` = "other")) %>% 
   count(doc_id, word, sort = T)
 
 inaugurals_total_n <- 
@@ -98,7 +101,13 @@ p1 <- pfunct(inaugurals_toplot, 3)
 p2 <- pfunct(inaugurals_toplot, 4)
 p3 <- pfunct(inaugurals_toplot, 2)
 p4 <- pfunct(inaugurals_toplot, 1)
-plot_grid(p1, p2, p3, p4, nrow=1)
+g1 <- plot_grid(p1, p2, p3, p4, nrow=1)
+g2 <- g1 %>% 
+  add_sub("@larshinrichs1",
+          x = 1, hjust = 1,
+          fontfamily="Volkhov-Regular",
+          size=6)
+ggdraw(g2)
 ```
 
 ## Most important words by tf-idf
@@ -147,5 +156,11 @@ p5 <- pfunct2(inaugurals_tf_idf, 3)
 p6 <- pfunct2(inaugurals_tf_idf, 4)
 p7 <- pfunct2(inaugurals_tf_idf, 2)
 p8 <- pfunct2(inaugurals_tf_idf, 1)
-plot_grid(p5, p6, p7, p8, nrow=1)
+g3 <- plot_grid(p5, p6, p7, p8, nrow=1) 
+g4 <- g3 %>% 
+  add_sub("@larshinrichs1",
+          x = 1, hjust = 1,
+          fontfamily="Volkhov-Regular",
+          size=6)
+ggdraw(g4)
 ```
