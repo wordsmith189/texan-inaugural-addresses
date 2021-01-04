@@ -81,20 +81,24 @@ pfunct <-
              width = 0.45,
              fill = pal[i]) +
     coord_flip() +
-    labs(x = "", y = "frequency in text",
+    labs(x = "", y = "freq",
          title = docs[i]) +
     theme_classic(base_family = "Volkhov-Regular",
-                  base_size = 12)
+                  base_size = 10) +
+    theme(plot.title = element_text(size=10,
+                                    face="bold"),
+          axis.title = element_blank(),
+          axis.text.x = element_blank())
 }
 
 ```
 
-```{r printplots1-4, layout="l-outset", fig.height=8, fig.cap="Top 15 terms in each Texan inaugural address by raw frequency."}
+```{r printplots1-4, layout="l-page", fig.height=3, fig.cap="Top 15 terms in each Texan inaugural address by frequency."}
 p1 <- pfunct(inaugurals_toplot, 3)
 p2 <- pfunct(inaugurals_toplot, 4)
 p3 <- pfunct(inaugurals_toplot, 2)
 p4 <- pfunct(inaugurals_toplot, 1)
-plot_grid(p1, p2, p3, p4, ncol=2)
+plot_grid(p1, p2, p3, p4, nrow=1)
 ```
 
 ## Most important words by tf-idf
@@ -130,14 +134,18 @@ pfunct2 <-
     labs(x = "", y = "tf_idf",
          title = docs[i]) +
     theme_classic(base_family = "Volkhov-Regular",
-                  base_size = 12)
+                  base_size = 10) +
+    theme(plot.title = element_text(size=10,
+                                    face="bold"),
+          axis.title = element_blank(),
+          axis.text.x = element_blank())
 }
 ```
 
-```{r printplots5-8, layout="l-outset", fig.height=8, fig.cap="Top 15 terms in each Texan inaugural address by tf-idf."}
+```{r printplots5-8, layout="l-page", fig.height=3, fig.cap="Top 15 terms in each Texan inaugural address by tf-idf."}
 p5 <- pfunct2(inaugurals_tf_idf, 3)
 p6 <- pfunct2(inaugurals_tf_idf, 4)
 p7 <- pfunct2(inaugurals_tf_idf, 2)
 p8 <- pfunct2(inaugurals_tf_idf, 1)
-plot_grid(p5, p6, p7, p8, ncol=2)
+plot_grid(p5, p6, p7, p8, nrow=1)
 ```
