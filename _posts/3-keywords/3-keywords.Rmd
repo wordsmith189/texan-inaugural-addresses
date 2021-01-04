@@ -88,9 +88,9 @@ pfunct <-
          title = docs[i]) +
     theme_classic(base_family = "Volkhov-Regular",
                   base_size = 10) +
-    theme(plot.title = element_text(size=10,
+    theme(plot.title = element_text(size=9,
                                     face="bold"),
-          axis.title = element_blank(),
+          axis.title = element_text(size=6),
           axis.text.x = element_blank())
 }
 
@@ -144,9 +144,9 @@ pfunct2 <-
          title = docs[i]) +
     theme_classic(base_family = "Volkhov-Regular",
                   base_size = 10) +
-    theme(plot.title = element_text(size=10,
+    theme(plot.title = element_text(size=9,
                                     face="bold"),
-          axis.title = element_blank(),
+          axis.title = element_text(size=6),
           axis.text.x = element_blank())
 }
 ```
