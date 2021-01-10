@@ -103,7 +103,7 @@ p3 <- pfunct(inaugurals_toplot, 2)
 p4 <- pfunct(inaugurals_toplot, 1)
 g1 <- plot_grid(p1, p2, p3, p4, nrow=1)
 g2 <- g1 %>% 
-  add_sub("@larshinrichs1",
+  add_sub("www.texasenglish.org",
           x = 1, hjust = 1,
           fontfamily="Volkhov-Regular",
           size=6)

@@ -50,7 +50,8 @@ nwords %>%
   geom_col(width = .45) +
   scale_fill_manual(values=pal) +
   labs(title = "Number of words") +
-  theme_classic(base_family = "serif") +
+  theme_classic(base_family = "Volkhov-Regular",
+                  base_size = 10) +
   theme(legend.position = "none",
         axis.title = element_blank())
 ```
@@ -75,7 +76,8 @@ nsents %>%
   geom_col(width = .45) +
   scale_fill_manual(values=pal) +
   labs(title = "Number of sentences") +
-  theme_classic(base_family = "serif") +
+  theme_classic(base_family = "Volkhov-Regular",
+                  base_size = 10) +
   theme(legend.position = "none",
         axis.title = element_blank())
 ```
@@ -98,7 +100,8 @@ rate %>%
   geom_col(width = .45) +
   scale_fill_manual(values=pal) +
   labs(title = "Number of words per sentence") +
-  theme_classic(base_family = "serif") +
+  theme_classic(base_family = "Volkhov-Regular",
+                  base_size = 10) +
   theme(legend.position = "none",
         axis.title = element_blank())
 ```
