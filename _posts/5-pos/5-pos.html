@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <meta name="generator" content="distill" />
-  <link rel="alternate" type="application/rss+xml" href="https://texan-inaugurals.netlify.app/index.xml" />
 
   <style type="text/css">
   /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
@@ -86,369 +85,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Texan Inaugural Addresses</title>
+  <title>5 Parts of Speech</title>
+
+  <meta property="description" itemprop="description" content="The frequency of various parts of speech."/>
 
 
-
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2020-12-22"/>
+  <meta property="article:created" itemprop="dateCreated" content="2020-12-22"/>
+  <meta name="article:author" content="Lars Hinrichs"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Texan Inaugural Addresses"/>
+  <meta property="og:title" content="5 Parts of Speech"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="The frequency of various parts of speech."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Texan Inaugural Addresses"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Texan Inaugural Addresses"/>
+  <meta property="twitter:title" content="5 Parts of Speech"/>
+  <meta property="twitter:description" content="The frequency of various parts of speech."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["Texan Inaugural Addresses"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["5 Parts of Speech"]},{"type":"character","attributes":{},"value":["The frequency of various parts of speech.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Lars Hinrichs"]},{"type":"character","attributes":{},"value":["https://larshinrichs.site"]},{"type":"character","attributes":{},"value":["The University of Texas at Austin"]},{"type":"character","attributes":{},"value":["https://liberalarts.utexas.edu/english"]}]}]},{"type":"character","attributes":{},"value":["12-22-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
-  <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["5-pos_files/anchor-4.2.2/anchor.min.js","5-pos_files/bowser-1.9.3/bowser.min.js","5-pos_files/distill-2.2.21/template.v2.js","5-pos_files/figure-html5/show-freqs-panel-1.png","5-pos_files/header-attrs-2.5/header-attrs.js","5-pos_files/jquery-1.11.3/jquery.min.js","5-pos_files/kePrint-0.0.1/kePrint.js","5-pos_files/lightable-0.0.1/lightable.css","5-pos_files/webcomponents-2.0.0/webcomponents.js","data/corpus_postagged.RDS"]}
   </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  </style>
-
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -1734,283 +1403,513 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="5-pos_files/header-attrs-2.5/header-attrs.js"></script>
+  <script src="5-pos_files/kePrint-0.0.1/kePrint.js"></script>
+  <link href="5-pos_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+  <script src="5-pos_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="5-pos_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="5-pos_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="5-pos_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="5-pos_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Texan Inaugural Addresses","authors":[]}
+{"title":"5 Parts of Speech","description":"The frequency of various parts of speech.","authors":[{"author":"Lars Hinrichs","authorURL":"https://larshinrichs.site","affiliation":"The University of Texas at Austin","affiliationURL":"https://liberalarts.utexas.edu/english","orcidID":""}],"publishedDate":"2020-12-22T00:00:00.000+00:00","citationText":"Hinrichs, 2020"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<span class="logo">
-<img src="lbj.jpg"/>
-</span>
-<a href="index.html" class="title">Texan Inaugural Addresses</a>
-</div>
-<div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).load(function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + window.location.hash + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-apply-limit l-page">
-<div class="posts-list">
-<h1 class="posts-list-caption" data-caption="Texan Inaugural Addresses">Texan Inaugural Addresses</h1>
-<a href="posts/1-the-data/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Dec. 25, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Lars Hinrichs</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/1-the-data/lbj.inaug.jpg"/>
-</div>
-<div class="description">
-<h2>1 The Data</h2>
-<div class="dt-tags"></div>
-<p>Scope, source, and preparation of the data.</p>
-</div>
-</a>
-<a href="posts/2-numeric-measures/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Dec. 25, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Lars Hinrichs</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2-numeric-measures/measure.jpg"/>
-</div>
-<div class="description">
-<h2>2 Numeric Measures</h2>
-<div class="dt-tags"></div>
-<p>Sentence lengths, number of words, etc.</p>
-</div>
-</a>
-<a href="posts/3-keywords/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Dec. 24, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Lars Hinrichs</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/3-keywords/key.png"/>
-</div>
-<div class="description">
-<h2>3 Keywords</h2>
-<div class="dt-tags"></div>
-<p>Which terms are frequent, and which are significant?</p>
-</div>
-</a>
-<a href="posts/4-complexity/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Dec. 23, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Lars Hinrichs</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/4-complexity/complexity.jpg"/>
-</div>
-<div class="description">
-<h2>4 Complexity</h2>
-<div class="dt-tags"></div>
-<p>The use of and/or versus other conjunctions.</p>
-</div>
-</a>
-<a href="posts/5-pos/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Dec. 22, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Lars Hinrichs</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/5-pos/5-pos_files/figure-html5/show-freqs-panel-1.png"/>
-</div>
-<div class="description">
-<h2>5 Parts of Speech</h2>
-<div class="dt-tags"></div>
-<p>The frequency of various parts of speech.</p>
-</div>
-</a>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Texan Inaugural Addresses</h1>
+<h1>5 Parts of Speech</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p><p>The frequency of various parts of speech.</p></p>
 </div>
 
+<div class="d-byline">
+  Lars Hinrichs <a href="https://larshinrichs.site" class="uri">https://larshinrichs.site</a> (The University of Texas at Austin)<a href="https://liberalarts.utexas.edu/english" class="uri">https://liberalarts.utexas.edu/english</a>
+  
+<br/>12-22-2020
+</div>
 
 <div class="d-article">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#data-tagging">Data tagging</a></li>
+<li><a href="#comparing-pos-frequencies">Comparing POS frequencies</a></li>
+<li><a href="#interpretation">Interpretation</a></li>
+</ul>
+</nav>
+</div>
+<h2 id="data-tagging">Data tagging</h2>
+<p>The four speeches will be part-of-speech tagged for this analysis, so that each word will be marked for its grammatical class.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:show-data">Table 1: </span>Top of data frame, POS-tagged.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+doc_id
+</th>
+<th style="text-align:right;">
+sid
+</th>
+<th style="text-align:right;">
+tid
+</th>
+<th style="text-align:left;">
+token
+</th>
+<th style="text-align:left;">
+token_with_ws
+</th>
+<th style="text-align:left;">
+lemma
+</th>
+<th style="text-align:left;">
+upos
+</th>
+<th style="text-align:left;">
+xpos
+</th>
+<th style="text-align:right;">
+tid_source
+</th>
+<th style="text-align:left;">
+relation
+</th>
+<th style="text-align:right;">
+year
+</th>
+<th style="text-align:left;">
+president
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1965-Johnson
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+My
+</td>
+<td style="text-align:left;">
+My
+</td>
+<td style="text-align:left;">
+-PRON-
+</td>
+<td style="text-align:left;">
+DET
+</td>
+<td style="text-align:left;">
+PRP$
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+poss
+</td>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+Johnson
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1965-Johnson
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+fellow
+</td>
+<td style="text-align:left;">
+fellow
+</td>
+<td style="text-align:left;">
+fellow
+</td>
+<td style="text-align:left;">
+ADJ
+</td>
+<td style="text-align:left;">
+JJ
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+amod
+</td>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+Johnson
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1965-Johnson
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+countrymen
+</td>
+<td style="text-align:left;">
+countrymen
+</td>
+<td style="text-align:left;">
+countryman
+</td>
+<td style="text-align:left;">
+NOUN
+</td>
+<td style="text-align:left;">
+NNS
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:left;">
+nsubj
+</td>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+Johnson
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1965-Johnson
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+on
+</td>
+<td style="text-align:left;">
+on
+</td>
+<td style="text-align:left;">
+on
+</td>
+<td style="text-align:left;">
+ADP
+</td>
+<td style="text-align:left;">
+IN
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:left;">
+prep
+</td>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+Johnson
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1965-Johnson
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+this
+</td>
+<td style="text-align:left;">
+this
+</td>
+<td style="text-align:left;">
+this
+</td>
+<td style="text-align:left;">
+DET
+</td>
+<td style="text-align:left;">
+DT
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+det
+</td>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+Johnson
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1965-Johnson
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+occasion
+</td>
+<td style="text-align:left;">
+occasion
+</td>
+<td style="text-align:left;">
+occasion
+</td>
+<td style="text-align:left;">
+NOUN
+</td>
+<td style="text-align:left;">
+NN
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+pobj
+</td>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+Johnson
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1965-Johnson
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+the
+</td>
+<td style="text-align:left;">
+the
+</td>
+<td style="text-align:left;">
+the
+</td>
+<td style="text-align:left;">
+DET
+</td>
+<td style="text-align:left;">
+DT
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+det
+</td>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+Johnson
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1965-Johnson
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+oath
+</td>
+<td style="text-align:left;">
+oath
+</td>
+<td style="text-align:left;">
+oath
+</td>
+<td style="text-align:left;">
+NOUN
+</td>
+<td style="text-align:left;">
+NN
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:left;">
+nsubj
+</td>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+Johnson
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1965-Johnson
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+I
+</td>
+<td style="text-align:left;">
+I
+</td>
+<td style="text-align:left;">
+-PRON-
+</td>
+<td style="text-align:left;">
+PRON
+</td>
+<td style="text-align:left;">
+PRP
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:left;">
+nsubj
+</td>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+Johnson
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1965-Johnson
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+have
+</td>
+<td style="text-align:left;">
+have
+</td>
+<td style="text-align:left;">
+have
+</td>
+<td style="text-align:left;">
+AUX
+</td>
+<td style="text-align:left;">
+VBP
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:left;">
+aux
+</td>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+Johnson
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h2 id="comparing-pos-frequencies">Comparing POS frequencies</h2>
+<p>We will work with the <code>upos</code> column, which gives a fine enough classification of POS into 14 different types:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code> [1] &quot;DET&quot;   &quot;ADJ&quot;   &quot;NOUN&quot;  &quot;ADP&quot;   &quot;PRON&quot;  &quot;AUX&quot;   &quot;VERB&quot;  &quot;CCONJ&quot;
+ [9] &quot;PROPN&quot; &quot;PART&quot;  &quot;ADV&quot;   &quot;NUM&quot;   &quot;SCONJ&quot; &quot;INTJ&quot; </code></pre>
+</div>
+<p>The unit of analysis will be frequency per 1,000 words, to make the numbers comparable. The following plot shows these values ordered by POS-tag.</p>
+<div class="layout-chunk" data-layout="l-body-outset">
+<div class="figure"><span id="fig:show-freqs-panel"></span>
+<img src="5-pos_files/figure-html5/show-freqs-panel-1.png" alt="Comparison of POS frequencies." width="624" />
+<p class="caption">
+Figure 1: Comparison of POS frequencies.
+</p>
+</div>
+</div>
+<h2 id="interpretation">Interpretation</h2>
+<p>[to follow]</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

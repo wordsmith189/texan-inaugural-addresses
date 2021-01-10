@@ -168,4 +168,8 @@ And this is despite the fact that the second inaugural of Bush 43 had longer sen
 
 So we might say: after 9-11, Bush's messaging has tightened up and simplified notably. He has lost 25% of his subordinating conjunctions -- that's a very significant drop in the world of corpus linguistics.
 
-<aside>You could call this shift dramatic without being wrong.</aside>
+<aside>
+
+You could call this shift dramatic without being wrong.
+
+</aside>

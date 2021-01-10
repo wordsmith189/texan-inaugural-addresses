@@ -1,0 +1,125 @@
+---
+title: "5 Parts of Speech"
+description: |
+  The frequency of various parts of speech.
+author:
+  - name: Lars Hinrichs
+    url: https://larshinrichs.site
+    affiliation: The University of Texas at Austin
+    affiliation_url: https://liberalarts.utexas.edu/english
+date: 12-22-2020
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      cache = TRUE,
+                      cache.lazy = FALSE)
+library(pacman)
+p_load(rio, dplyr, ggplot2, stringr, knitr, kableExtra,
+       beepr)
+```
+
+## Data tagging
+
+The four speeches will be part-of-speech tagged for this analysis, so that each word will be marked for its grammatical class.
+
+```{r run-pos-tagging, eval=F}
+# init tagging
+p_load(scriptuRs, cleanNLP, reticulate)
+pypath <- "/usr/local/opt/python/bin/python3.7"
+use_python(pypath)
+cnlp_init_spacy()
+
+srpath <- "../../data/corpus.RDS"
+
+# perform tagging
+corpus_for_tagging <- 
+  rio::import(srpath) %>% 
+  mutate(linelength = str_count(text, pattern = " ")) %>%
+  filter(linelength > 2)
+
+corpus_annotated <- cnlp_annotate(corpus_for_tagging,
+                                  text_name = "text", 
+                                  verbose = T)
+
+corpus_postagged <- 
+  corpus_annotated$token %>% 
+  left_join(corpus_annotated$document)
+
+rm(corpus_for_tagging)
+rm(corpus_annotated)
+
+corpus_postagged <- 
+  corpus_postagged %>% 
+  select(-linelength) %>% 
+  filter(! upos %in% c("PUNCT", "SPACE"))
+
+corpus_postagged %>% rio::export(
+  "data/corpus_postagged.RDS")
+
+beepr::beep(sound = 2, expr = NULL)
+
+```
+```{r show-data}
+corpus_postagged <- 
+  rio::import("data/corpus_postagged.RDS")
+corpus_postagged %>% 
+  head(10) %>% 
+  select(-party, -nickname, -first_name) %>% 
+  kbl(caption = "Top of data frame, POS-tagged.") %>% 
+  kable_paper()
+```
+
+```{r get-totals}
+n_total <- 
+  corpus_postagged %>% 
+  group_by(doc_id) %>% 
+  summarise(total = n())
+
+n_pos <- 
+  corpus_postagged %>% 
+  group_by(doc_id) %>% 
+  count(upos) %>% 
+  left_join(n_total) %>% 
+  mutate(freq_per_1000 = n/total*1000)
+```
+## Comparing POS frequencies
+
+We will work with the `upos` column, which gives a fine enough classification of POS into 14 different types: 
+
+```{r}
+corpus_postagged %>% pull(upos) %>% unique()
+```
+
+The unit of analysis will be frequency per 1,000 words, to make the numbers comparable. The following plot shows these values ordered by POS-tag.
+
+```{r show-freqs-panel, fig.cap="Comparison of POS frequencies.", layout="l-body-outset"}
+
+pal <- wesanderson::wes_palette("Darjeeling2", 4, type = "discrete")
+n_pos %>% 
+  ggplot(aes(x=doc_id,
+             y=freq_per_1000,
+             fill=doc_id)) +
+  geom_col(width = .45) +
+  facet_wrap(~upos, scales = "free") +
+  labs(
+    title = "Parts of Speech in Texan Inaugurals",
+    subtitle = "Normalized to freq. per 1,000 words",
+    x = NULL, y = NULL,
+       caption = "www.texasenglish.org") +
+  scale_fill_manual(values = pal) +
+  theme_classic(base_family = "Volkhov-Regular",
+                  base_size = 10) +
+  theme(axis.text.x = element_blank(),
+        legend.title = element_blank())
+
+```
+
+## Interpretation
+
+[to follow]

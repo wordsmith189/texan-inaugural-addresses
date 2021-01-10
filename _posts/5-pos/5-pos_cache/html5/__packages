@@ -1,0 +1,9 @@
+base
+pacman
+rio
+dplyr
+stringr
+knitr
+kableExtra
+beepr
+ggplot2
