@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["5-pos_files/anchor-4.2.2/anchor.min.js","5-pos_files/bowser-1.9.3/bowser.min.js","5-pos_files/distill-2.2.21/template.v2.js","5-pos_files/figure-html5/show-freqs-panel-1.png","5-pos_files/header-attrs-2.5/header-attrs.js","5-pos_files/jquery-1.11.3/jquery.min.js","5-pos_files/kePrint-0.0.1/kePrint.js","5-pos_files/lightable-0.0.1/lightable.css","5-pos_files/webcomponents-2.0.0/webcomponents.js","data/corpus_postagged.RDS"]}
+  {"type":"character","attributes":{},"value":["5-pos_files/anchor-4.2.2/anchor.min.js","5-pos_files/bowser-1.9.3/bowser.min.js","5-pos_files/distill-2.2.21/template.v2.js","5-pos_files/figure-html5/nominal-v-verbal-1.png","5-pos_files/figure-html5/show-freqs-panel-1.png","5-pos_files/header-attrs-2.5/header-attrs.js","5-pos_files/jquery-1.11.3/jquery.min.js","5-pos_files/kePrint-0.0.1/kePrint.js","5-pos_files/lightable-0.0.1/lightable.css","5-pos_files/webcomponents-2.0.0/webcomponents.js","data/corpus_postagged.RDS"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1450,7 +1450,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3>Contents</h3>
 <ul>
 <li><a href="#data-tagging">Data tagging</a></li>
-<li><a href="#comparing-pos-frequencies">Comparing POS frequencies</a></li>
+<li><a href="#comparing-pos-frequencies">Comparing POS frequencies</a>
+<ul>
+<li><a href="#global-frequencies">Global frequencies</a></li>
+<li><a href="#nouns-vs.-verbs">Nouns vs. Verbs</a></li>
+</ul></li>
 <li><a href="#interpretation">Interpretation</a></li>
 </ul>
 </nav>
@@ -1898,12 +1902,40 @@ Johnson
 <pre><code> [1] &quot;DET&quot;   &quot;ADJ&quot;   &quot;NOUN&quot;  &quot;ADP&quot;   &quot;PRON&quot;  &quot;AUX&quot;   &quot;VERB&quot;  &quot;CCONJ&quot;
  [9] &quot;PROPN&quot; &quot;PART&quot;  &quot;ADV&quot;   &quot;NUM&quot;   &quot;SCONJ&quot; &quot;INTJ&quot; </code></pre>
 </div>
-<p>The unit of analysis will be frequency per 1,000 words, to make the numbers comparable. The following plot shows these values ordered by POS-tag.</p>
+<p>The unit of analysis will be frequency per 1,000 words, to make the numbers comparable.</p>
+<h3 id="global-frequencies">Global frequencies</h3>
+<p>The following plot shows these values ordered by POS-tag.</p>
 <div class="layout-chunk" data-layout="l-body-outset">
 <div class="figure"><span id="fig:show-freqs-panel"></span>
 <img src="5-pos_files/figure-html5/show-freqs-panel-1.png" alt="Comparison of POS frequencies." width="624" />
 <p class="caption">
 Figure 1: Comparison of POS frequencies.
+</p>
+</div>
+</div>
+<h3 id="nouns-vs.-verbs">Nouns vs. Verbs</h3>
+<p>A big point of interest is the degree of overall nominal vs. verbal nature of a text. There is a group of parts of speech that pattern together with nouns. They are:</p>
+<ul>
+<li><p>noun (NOUN)</p></li>
+<li><p>proper noun (PROPN)</p></li>
+<li><p>adjective (ADJ)</p></li>
+<li><p>determiner (DET)</p></li>
+<li><p>pronoun (PRON)</p></li>
+<li><p>preposition (ADP)</p></li>
+</ul>
+<p>The other group of tags that co-occur and that characterize a more verbal style are</p>
+<ul>
+<li><p>verb (VERB)</p></li>
+<li><p>auxiliary (AUX)</p></li>
+<li><p>adverb (ADV)</p></li>
+<li><p>conjunction (CCONJ, SCONJ)</p></li>
+</ul>
+<p>Let us treat the two groups in aggregate and compare the speeches for their frequencies.</p>
+<div class="layout-chunk" data-layout="l-body-outset">
+<div class="figure"><span id="fig:nominal-v-verbal"></span>
+<img src="5-pos_files/figure-html5/nominal-v-verbal-1.png" alt="Aggregate counts for nominal and verbal POS-groups in the speeches." width="624" />
+<p class="caption">
+Figure 2: Aggregate counts for nominal and verbal POS-groups in the speeches.
 </p>
 </div>
 </div>

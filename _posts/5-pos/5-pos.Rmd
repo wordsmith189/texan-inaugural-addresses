@@ -14,7 +14,6 @@ output:
     toc: true
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
                       cache = TRUE,
@@ -65,6 +64,7 @@ corpus_postagged %>% rio::export(
 beepr::beep(sound = 2, expr = NULL)
 
 ```
+
 ```{r show-data}
 corpus_postagged <- 
   rio::import("data/corpus_postagged.RDS")
@@ -88,15 +88,20 @@ n_pos <-
   left_join(n_total) %>% 
   mutate(freq_per_1000 = n/total*1000)
 ```
+
 ## Comparing POS frequencies
 
-We will work with the `upos` column, which gives a fine enough classification of POS into 14 different types: 
+We will work with the `upos` column, which gives a fine enough classification of POS into 14 different types:
 
 ```{r}
 corpus_postagged %>% pull(upos) %>% unique()
 ```
 
-The unit of analysis will be frequency per 1,000 words, to make the numbers comparable. The following plot shows these values ordered by POS-tag.
+The unit of analysis will be frequency per 1,000 words, to make the numbers comparable.
+
+### Global frequencies
+
+The following plot shows these values ordered by POS-tag.
 
 ```{r show-freqs-panel, fig.cap="Comparison of POS frequencies.", layout="l-body-outset"}
 
@@ -109,15 +114,85 @@ n_pos %>%
   facet_wrap(~upos, scales = "free") +
   labs(
     title = "Parts of Speech in Texan Inaugurals",
-    subtitle = "Normalized to freq. per 1,000 words",
+    subtitle = "Frequencies per 1,000 words",
     x = NULL, y = NULL,
        caption = "www.texasenglish.org") +
   scale_fill_manual(values = pal) +
-  theme_classic(base_family = "Volkhov-Regular",
+  theme_bw(base_family = "Volkhov-Regular",
                   base_size = 10) +
   theme(axis.text.x = element_blank(),
-        legend.title = element_blank())
+        legend.title = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank())
 
+```
+
+### Nouns vs. Verbs
+
+A big point of interest is the degree of overall nominal vs. verbal nature of a text. There is a group of parts of speech that pattern together with nouns. They are:
+
+-   noun (NOUN)
+
+-   proper noun (PROPN)
+
+-   adjective (ADJ)
+
+-   determiner (DET)
+
+-   pronoun (PRON)
+
+-   preposition (ADP)
+
+The other group of tags that co-occur and that characterize a more verbal style are
+
+-   verb (VERB)
+
+-   auxiliary (AUX)
+
+-   adverb (ADV)
+
+-   conjunction (CCONJ, SCONJ)
+
+Let us treat the two groups in aggregate and compare the speeches for their frequencies.
+
+```{r nominal-v-verbal, layout="l-body-outset", fig.cap="Aggregate counts for nominal and verbal POS-groups in the speeches.", fig.height=3}
+nominal <- c("NOUN", "PROPN", "ADJ", "DET",
+             "PRON", "ADP")
+verbal <- c("VERB", "AUX", "ADV", "CCONJ", "SCONJ")
+
+corpus_postagged <- 
+  corpus_postagged %>% 
+  mutate(posgroup = case_when(
+    upos %in% nominal ~ "nominal",
+    upos %in% verbal ~ "verbal",
+    TRUE ~ "other"
+  ))
+
+n_posgroup <- 
+  corpus_postagged %>% 
+  count(doc_id, posgroup) %>% 
+  left_join(n_total) %>% 
+  mutate(freq = n/total*100)
+
+n_posgroup %>% 
+  filter(posgroup != "other") %>% 
+  ggplot(aes(x=posgroup,
+             y=freq,
+             fill=doc_id)) +
+  geom_col(show.legend = F,
+           position = "dodge") +
+  scale_fill_manual(values=pal) +
+  labs(title="Nominal vs. Verbal Style in Texan Inaugurals",
+       subtitle="Frequencies per 100 words",
+       x=NULL, y=NULL,
+       caption="www.texasenglish.org"
+       ) +
+  facet_wrap(~doc_id, nrow=1) +
+  theme_bw(base_family = "Volkhov-Regular",
+                  base_size = 10) +
+  theme(legend.title = element_blank())
+  
 ```
 
 ## Interpretation
