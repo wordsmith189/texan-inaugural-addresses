@@ -86,12 +86,16 @@ pfunct <-
     coord_flip() +
     labs(x = "", y = "freq",
          title = docs[i]) +
-    theme_classic(base_family = "Volkhov-Regular",
+    theme_bw(base_family = "Volkhov-Regular",
                   base_size = 10) +
     theme(plot.title = element_text(size=9,
                                     face="bold"),
           axis.title = element_text(size=6),
-          axis.text.x = element_blank())
+          axis.text.x = element_blank(),
+          panel.grid.major.x = element_blank(),
+          #panel.grid.minor.x = element_blank(),
+          panel.grid.major.y = element_blank(),
+          panel.grid.minor.x = element_blank())
 }
 
 ```
@@ -142,12 +146,16 @@ pfunct2 <-
     coord_flip() +
     labs(x = "", y = "tf_idf",
          title = docs[i]) +
-    theme_classic(base_family = "Volkhov-Regular",
+    theme_bw(base_family = "Volkhov-Regular",
                   base_size = 10) +
     theme(plot.title = element_text(size=9,
                                     face="bold"),
           axis.title = element_text(size=6),
-          axis.text.x = element_blank())
+          axis.text.x = element_blank(),
+          panel.grid.major.x = element_blank(),
+          #panel.grid.minor.x = element_blank(),
+          panel.grid.major.y = element_blank(),
+          panel.grid.minor.x = element_blank())
 }
 ```
 
@@ -158,7 +166,7 @@ p7 <- pfunct2(inaugurals_tf_idf, 2)
 p8 <- pfunct2(inaugurals_tf_idf, 1)
 g3 <- plot_grid(p5, p6, p7, p8, nrow=1) 
 g4 <- g3 %>% 
-  add_sub("@larshinrichs1",
+  add_sub("www.texasenglish.org",
           x = 1, hjust = 1,
           fontfamily="Volkhov-Regular",
           size=6)

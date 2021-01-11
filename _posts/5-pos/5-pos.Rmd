@@ -124,7 +124,9 @@ n_pos %>%
         legend.title = element_blank(),
         panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank(),
-        panel.grid.major.y = element_blank())
+        panel.grid.major.y = element_blank(),
+        strip.text = element_text(size=7)
+        )
 
 ```
 
@@ -139,8 +141,6 @@ A big point of interest is the degree of overall nominal vs. verbal nature of a 
 -   adjective (ADJ)
 
 -   determiner (DET)
-
--   pronoun (PRON)
 
 -   preposition (ADP)
 
@@ -158,7 +158,7 @@ Let us treat the two groups in aggregate and compare the speeches for their freq
 
 ```{r nominal-v-verbal, layout="l-body-outset", fig.cap="Aggregate counts for nominal and verbal POS-groups in the speeches.", fig.height=3}
 nominal <- c("NOUN", "PROPN", "ADJ", "DET",
-             "PRON", "ADP")
+             "ADP")
 verbal <- c("VERB", "AUX", "ADV", "CCONJ", "SCONJ")
 
 corpus_postagged <- 
@@ -191,10 +191,15 @@ n_posgroup %>%
   facet_wrap(~doc_id, nrow=1) +
   theme_bw(base_family = "Volkhov-Regular",
                   base_size = 10) +
-  theme(legend.title = element_blank())
+  theme(legend.title = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_blank())
   
 ```
 
+The speech that truly stands out (again) is 2005-Bush. He makes a clear switch to more nominal style, compensated by a drop in verbal POSs, relative to his Texan predecessors.
+
 ## Interpretation
 
-[to follow]
+### What is a "more nominal" style?
