@@ -29,9 +29,9 @@ corpus <- import("data/corpus_postagged.RDS")
 
 ## Overall sentiment
 
-In sentiment analysis, each word is scored for its emotional base value. Some words have a positive core, other negative. A little under 10% of all words in these speeches are recognized as conveying (positive or negative) sentiment.
+In sentiment analysis, each word is scored for its emotional base value. Some words have a positive core, others negative. Not all words are recognized as conveying emotion: only a little under 10% of all words receive a score, at least that's the case with these speeches.
 
-### Global scores per speech
+### Global Scores per Speech
 
 The first plot gives a comparison of pos. and neg. scores for each inaugural.
 
@@ -79,9 +79,11 @@ n_sent %>%
         plot.caption.position =  "plot")
 ```
 
+## Most Frequent Sentiment Terms
+
 ### Top  Positive Terms
 
-The following plot shows the most frequent positive-scored terms for each speech together with its number of occurrences.
+The following plot shows the most frequent positive-scored terms for each speech together with its number of occurrences.^[Shown are the top-6 ranked terms for each speech. Sometimes there are ties for ranks.]
 
 ```{r top-pos-terms, layout="l-body-outset", fig.cap="Sentiment analysis: top-ranked positive terms.", fig.height=6}
 terms_pos <- 
@@ -130,11 +132,6 @@ terms_pos %>%
 
 ```
 
-<aside>
-
-Shown are the top-6 ranked terms for each speech. Sometimes there are ties for ranks.
-
-</aside>
 
 ### Top Negative Terms
 
@@ -186,3 +183,9 @@ terms_neg %>%
   coord_flip()
 
 ```
+
+## Interpretation
+
+Once again, 2005-Bush stands out: it has by far the highest frequency of emotionally loaded terms out of all four speeches. When we look closer, we see that much of this is attributable to the hyper-frequent use of **freedom** and **free**.
+
+All four speeches are reticent when it comes to negative terms. This must be due to that good old American optimism that we're seeing. 

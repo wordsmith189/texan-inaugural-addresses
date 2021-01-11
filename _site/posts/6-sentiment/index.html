@@ -1822,22 +1822,27 @@ document.addEventListener('DOMContentLoaded', function() {
 <ul>
 <li><a href="#overall-sentiment">Overall sentiment</a>
 <ul>
-<li><a href="#global-scores-per-speech">Global scores per speech</a></li>
+<li><a href="#global-scores-per-speech">Global Scores per Speech</a></li>
+</ul></li>
+<li><a href="#most-frequent-sentiment-terms">Most Frequent Sentiment Terms</a>
+<ul>
 <li><a href="#top-positive-terms">Top Positive Terms</a></li>
 <li><a href="#top-negative-terms">Top Negative Terms</a></li>
 </ul></li>
+<li><a href="#interpretation">Interpretation</a></li>
 </ul>
 </nav>
 </div>
 <h2 id="overall-sentiment">Overall sentiment</h2>
-<p>In sentiment analysis, each word is scored for its emotional base value. Some words have a positive core, other negative. A little under 10% of all words in these speeches are recognized as conveying (positive or negative) sentiment.</p>
-<h3 id="global-scores-per-speech">Global scores per speech</h3>
+<p>In sentiment analysis, each word is scored for its emotional base value. Some words have a positive core, others negative. Not all words are recognized as conveying emotion: only a little under 10% of all words receive a score, at least that’s the case with these speeches.</p>
+<h3 id="global-scores-per-speech">Global Scores per Speech</h3>
 <p>The first plot gives a comparison of pos. and neg. scores for each inaugural.</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="6-sentiment_files/figure-html5/viz-sentiment-1.png" width="624" /></p>
 </div>
+<h2 id="most-frequent-sentiment-terms">Most Frequent Sentiment Terms</h2>
 <h3 id="top-positive-terms">Top Positive Terms</h3>
-<p>The following plot shows the most frequent positive-scored terms for each speech together with its number of occurrences.</p>
+<p>The following plot shows the most frequent positive-scored terms for each speech together with its number of occurrences.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <div class="layout-chunk" data-layout="l-body-outset">
 <div class="figure"><span id="fig:top-pos-terms"></span>
 <img src="6-sentiment_files/figure-html5/top-pos-terms-1.png" alt="Sentiment analysis: top-ranked positive terms." width="624" />
@@ -1846,9 +1851,6 @@ Figure 1: Sentiment analysis: top-ranked positive terms.
 </p>
 </div>
 </div>
-<aside>
-<p>Shown are the top-6 ranked terms for each speech. Sometimes there are ties for ranks.</p>
-</aside>
 <h3 id="top-negative-terms">Top Negative Terms</h3>
 <p>Below follows the same visualization as above, but for the terms with negative semantic loads.</p>
 <div class="layout-chunk" data-layout="l-body-outset">
@@ -1859,7 +1861,16 @@ Figure 2: Sentiment analysis: top-ranked negative terms.
 </p>
 </div>
 </div>
+<h2 id="interpretation">Interpretation</h2>
+<p>Once again, 2005-Bush stands out: it has by far the highest frequency of emotionally loaded terms out of all four speeches. When we look closer, we see that much of this is attributable to the hyper-frequent use of <strong>freedom</strong> and <strong>free</strong>.</p>
+<p>All four speeches are reticent when it comes to negative terms. This must be due to that good old American optimism that we’re seeing.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>Shown are the top-6 ranked terms for each speech. Sometimes there are ties for ranks.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
