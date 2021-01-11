@@ -1,0 +1,10 @@
+base
+pacman
+rio
+dplyr
+ggplot2
+stringr
+knitr
+kableExtra
+beepr
+tidytext

@@ -53,5 +53,14 @@
       <pubDate>Tue, 22 Dec 2020 00:00:00 +0000</pubDate>
       <media:content url="https://texan-inaugurals.netlify.app/posts/5-pos/5-pos_files/figure-html5/show-freqs-panel-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
+    <item>
+      <title>6 Sentiment</title>
+      <dc:creator>Lars Hinrichs</dc:creator>
+      <link>https://texan-inaugurals.netlify.app/posts/6-sentiment</link>
+      <description>A sentiment analysis of the speeches.</description>
+      <guid>https://texan-inaugurals.netlify.app/posts/6-sentiment</guid>
+      <pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://texan-inaugurals.netlify.app/posts/6-sentiment/6-sentiment_files/figure-html5/viz-sentiment-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
   </channel>
 </rss>
