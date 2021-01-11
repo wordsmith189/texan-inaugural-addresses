@@ -12,6 +12,7 @@ output:
   distill::distill_article:
     self_contained: false
     toc: true
+bibliography: references.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -124,7 +125,6 @@ n_pos %>%
         legend.title = element_blank(),
         panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank(),
-        panel.grid.major.y = element_blank(),
         strip.text = element_text(size=7)
         )
 
@@ -193,13 +193,127 @@ n_posgroup %>%
                   base_size = 10) +
   theme(legend.title = element_blank(),
         panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.y = element_blank())
+        panel.grid.minor.x = element_blank())
   
 ```
 
-The speech that truly stands out (again) is 2005-Bush. He makes a clear switch to more nominal style, compensated by a drop in verbal POSs, relative to his Texan predecessors.
+The speech that truly stands out (again) is 2005-Bush. He makes a clear switch to more nominal style, compensated by a drop in verbal tags, relative to his Texan predecessors.
 
-## Interpretation
+#### Interpretation: What is a "more nominal" style?
 
-### What is a "more nominal" style?
+A more nominal style corresponds to more "conceptual" thinking, whereas a more verbal style corresponds to more "dynamic" thinking. This conceptual-dynamic index (based on POS frequencies) has been shown to correlate with academic success in college students, where the students who show more nominal/conceptual styles in their admissions essays end up having significantly greater academic success over 4 years in college [@pennebaker2014]. Written, academic texts are the most nominal on a continuum from verbal to nominal style; informal spoken conversations are the most verbal [@biber1991].
+
+So that is what we are looking at: Bush 43's second inaugural reveals a significantly more *conceptual,* bookish style of thinking and speaking than what we see in the other Texan speeches. **The post-9/11 Bush is the most academic figure among Texan presidents.**
+
+What might be helpful is a qualitative follow-up analysis that looks at such questions as:
+
+-   What are all those nouns that Bush 43 uses in his second inaugural?
+
+Also, some background research on who the speechwriters were would be of interest. Was there a significant change from Bush-2001 to Bush-2005?
+
+### Pronouns
+
+It will be of interest to see which pronouns prevail in the four speeches. We will look at the different levels of person (1st person singular, 2nd person singular, and so on). Here is our definition of classes:
+
+```{r def-pron-classes, echo=T}
+s1 <- c("i", "my", "me", "myself")
+
+sp2 <- c("you", "your", "yourself")
+
+s3 <- c("he", "she", "it", "his", "her", "its", "him",
+        "himself", "herself", "itself", "something",
+        "everyone", "anything")
+
+p1 <- c("we", "our", "us", "ourselves")
+
+p3 <- c("they", "their", "them", "themselves")
+```
+
+<aside>
+
+Some notes:
+
+-   The form *yourselves* does not occur in any of the speeches.
+
+-   Otherwise, the *you*-forms do not differ between singular and plural; therefore there is only one class for the second person.
+
+-   The third-person pronoun *they* is only used in plural meaning in the speeches.
+
+    </aside>
+
+```{r viz-pronouns, layout="l-body-outset"}
+allpron <- c(s1, sp2, s3, p1, p3)
+corpus_pron <- 
+  corpus_postagged %>% 
+  mutate(token = token %>% tolower()) %>% 
+  filter(token %in% allpron & upos == "PRON") %>% 
+  mutate(prongroup = 
+           case_when(token %in% s1 ~ "I, my, me...",
+                     token %in% sp2 ~ "you, your...",
+                     token %in% s3 ~ "he/him/his, she/her, it/its...",
+                     token %in% p1 ~ "we, our, us...",
+                     token %in% p3 ~ "they, their, them..."))
+
+n_pron <-  
+  corpus_pron %>% 
+  count(doc_id, prongroup) %>% 
+  left_join(n_total) %>% 
+  mutate(freq = n/total*1000)
+
+#------PLOT--------#
+n_pron %>% 
+  mutate(prongroup = 
+           factor(prongroup, 
+                  levels = c("I, my, me...",
+                             "you, your...",
+                             "he/him/his, she/her, it/its...",
+                             "we, our, us...",
+                             "they, their, them..."
+                             ))) %>% 
+  ggplot(aes(doc_id, freq, 
+             fill = doc_id)) +
+  geom_col(position = "dodge", 
+           width = .45) +
+  labs(
+    title = "Pronouns in Texan Inaugurals",
+    subtitle = "Frequencies per 1,000 words",
+    x=NULL, y=NULL,
+    caption = "www.texasenglish.org"
+  ) +
+  scale_fill_manual(values=pal) +
+  facet_wrap(~prongroup, nrow = 2, scales = "free") +
+  theme_bw(base_family = "Volkhov-Regular",
+                  base_size = 10) +
+  theme(legend.title = element_blank(),
+        axis.text.x = element_blank(),
+        plot.caption = element_text(hjust = 0),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        strip.text = element_text(size=7))
+```
+
+A few clear trends are obvious:
+
+-   1st-person singular pronouns become increasingly infrequent; the fewest are in Bush 43's second inaugural.
+
+-   3-p-sg. pronouns also are on the descent, with Bush 43 (2005) leading.
+
+-   The same is true for 3-p-pl. pronouns.
+
+-   On the increase is the direct address of listeners with *you, your*, etc.
+
+#### Interpretation: What pronoun frequencies mean
+
+As Pennebaker has shown many times [@kacewicz2013; @pennebaker2011], higher frequencies of 1-p-sg. pronouns correspond to *weak sense of self, depression, lower positions in social hierarchies*. By contrast, speakers and writers with a strong sense of self use low frequencies of 1-p-sg.; they instead address other and speak about others.
+
+By these metrics, the second inaugural by George W. Bush is a reflection of a strong sense of self in the speaker. The stylistic elements in this speech project strength.
+
+What might be helpful is a qualitative follow-up analysis that looks at such questions as
+
+-   Why are the 2-p pronouns so high in Bush 43's second inaugural? Who is the *you* that he addresses?
+
+-   If Bush 43's second projects strength, does it also project unity? It is after all striking that the 1-p-pl. pronouns are so (relatively) infrequent.
+
+## Conclusion
+
+The part-of-speech frequencies provide multiple hints that Bush-2005 stands out among Texan inaugurals. His position at the beginning of his second term was, of course, unique: he and the country were recovering from a big, national trauma. While Johnson's time before his first inaugural was certainly not trauma-free (and, arguably, neither was Bush-41's), the traumas that Bush 43 dealt with and the leadership demanded of him at this point were different in nature.

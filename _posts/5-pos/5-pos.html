@@ -107,15 +107,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <meta property="twitter:description" content="The frequency of various parts of speech."/>
 
   <!--/radix_placeholder_meta_tags-->
+  
+  <meta name="citation_reference" content="citation_title=When small words foretell academic success: The case of college admissions essays;citation_publication_date=2014;citation_volume=9;citation_doi=10.1371/journal.pone.0115844;citation_author=James W. Pennebaker;citation_author=Cindy K. Chung;citation_author=Joey Frazee;citation_author=Gary M. Lavergne;citation_author=David I. Beaver"/>
+  <meta name="citation_reference" content="citation_title=Variation across speech and writing;citation_publication_date=1991;citation_publisher=Cambridge University Press;citation_author=Douglas Biber"/>
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["5 Parts of Speech"]},{"type":"character","attributes":{},"value":["The frequency of various parts of speech.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Lars Hinrichs"]},{"type":"character","attributes":{},"value":["https://larshinrichs.site"]},{"type":"character","attributes":{},"value":["The University of Texas at Austin"]},{"type":"character","attributes":{},"value":["https://liberalarts.utexas.edu/english"]}]}]},{"type":"character","attributes":{},"value":["12-22-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["5 Parts of Speech"]},{"type":"character","attributes":{},"value":["The frequency of various parts of speech.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Lars Hinrichs"]},{"type":"character","attributes":{},"value":["https://larshinrichs.site"]},{"type":"character","attributes":{},"value":["The University of Texas at Austin"]},{"type":"character","attributes":{},"value":["https://liberalarts.utexas.edu/english"]}]}]},{"type":"character","attributes":{},"value":["12-22-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["references.bib"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["5-pos_files/anchor-4.2.2/anchor.min.js","5-pos_files/bowser-1.9.3/bowser.min.js","5-pos_files/distill-2.2.21/template.v2.js","5-pos_files/figure-html5/nominal-v-verbal-1.png","5-pos_files/figure-html5/show-freqs-panel-1.png","5-pos_files/header-attrs-2.5/header-attrs.js","5-pos_files/jquery-1.11.3/jquery.min.js","5-pos_files/kePrint-0.0.1/kePrint.js","5-pos_files/lightable-0.0.1/lightable.css","5-pos_files/webcomponents-2.0.0/webcomponents.js","data/corpus_postagged.RDS"]}
+  {"type":"character","attributes":{},"value":["5-pos_files/anchor-4.2.2/anchor.min.js","5-pos_files/bowser-1.9.3/bowser.min.js","5-pos_files/distill-2.2.21/template.v2.js","5-pos_files/figure-html5/nominal-v-verbal-1.png","5-pos_files/figure-html5/show-freqs-panel-1.png","5-pos_files/figure-html5/viz-pronouns-1.png","5-pos_files/header-attrs-2.5/header-attrs.js","5-pos_files/jquery-1.11.3/jquery.min.js","5-pos_files/kePrint-0.0.1/kePrint.js","5-pos_files/lightable-0.0.1/lightable.css","5-pos_files/webcomponents-2.0.0/webcomponents.js","data/corpus_postagged.RDS","references.bib"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1454,11 +1457,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <ul>
 <li><a href="#global-frequencies">Global frequencies</a></li>
 <li><a href="#nouns-vs.-verbs">Nouns vs. Verbs</a></li>
+<li><a href="#pronouns">Pronouns</a></li>
 </ul></li>
-<li><a href="#interpretation">Interpretation</a>
-<ul>
-<li><a href="#what-is-a-more-nominal-style">What is a “more nominal” style?</a></li>
-</ul></li>
+<li><a href="#conclusion">Conclusion</a></li>
 </ul>
 </nav>
 </div>
@@ -1941,10 +1942,76 @@ Figure 2: Aggregate counts for nominal and verbal POS-groups in the speeches.
 </p>
 </div>
 </div>
-<p>The speech that truly stands out (again) is 2005-Bush. He makes a clear switch to more nominal style, compensated by a drop in verbal POSs, relative to his Texan predecessors.</p>
-<h2 id="interpretation">Interpretation</h2>
-<h3 id="what-is-a-more-nominal-style">What is a “more nominal” style?</h3>
+<p>The speech that truly stands out (again) is 2005-Bush. He makes a clear switch to more nominal style, compensated by a drop in verbal tags, relative to his Texan predecessors.</p>
+<h4 id="interpretation-what-is-a-more-nominal-style">Interpretation: What is a “more nominal” style?</h4>
+<p>A more nominal style corresponds to more “conceptual” thinking, whereas a more verbal style corresponds to more “dynamic” thinking. This conceptual-dynamic index (based on POS frequencies) has been shown to correlate with academic success in college students, where the students who show more nominal/conceptual styles in their admissions essays end up having significantly greater academic success over 4 years in college <span class="citation" data-cites="pennebaker2014">(<a href="#ref-pennebaker2014" role="doc-biblioref">Pennebaker et al. 2014</a>)</span>. Written, academic texts are the most nominal on a continuum from verbal to nominal style; informal spoken conversations are the most verbal <span class="citation" data-cites="biber1991">(<a href="#ref-biber1991" role="doc-biblioref">Biber 1991</a>)</span>.</p>
+<p>So that is what we are looking at: Bush 43’s second inaugural reveals a significantly more <em>conceptual,</em> bookish style of thinking and speaking than what we see in the other Texan speeches. <strong>The post-9/11 Bush is the most academic figure among Texan presidents.</strong></p>
+<p>What might be helpful is a qualitative follow-up analysis that looks at such questions as:</p>
+<ul>
+<li>What are all those nouns that Bush 43 uses in his second inaugural?</li>
+</ul>
+<p>Also, some background research on who the speechwriters were would be of interest. Was there a significant change from Bush-2001 to Bush-2005?</p>
+<h3 id="pronouns">Pronouns</h3>
+<p>It will be of interest to see which pronouns prevail in the four speeches. We will look at the different levels of person (1st person singular, 2nd person singular, and so on). Here is our definition of classes:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>s1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"i"</span>, <span class='st'>"my"</span>, <span class='st'>"me"</span>, <span class='st'>"myself"</span><span class='op'>)</span>
+
+<span class='va'>sp2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"you"</span>, <span class='st'>"your"</span>, <span class='st'>"yourself"</span><span class='op'>)</span>
+
+<span class='va'>s3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"he"</span>, <span class='st'>"she"</span>, <span class='st'>"it"</span>, <span class='st'>"his"</span>, <span class='st'>"her"</span>, <span class='st'>"its"</span>, <span class='st'>"him"</span>,
+        <span class='st'>"himself"</span>, <span class='st'>"herself"</span>, <span class='st'>"itself"</span>, <span class='st'>"something"</span>,
+        <span class='st'>"everyone"</span>, <span class='st'>"anything"</span><span class='op'>)</span>
+
+<span class='va'>p1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"we"</span>, <span class='st'>"our"</span>, <span class='st'>"us"</span>, <span class='st'>"ourselves"</span><span class='op'>)</span>
+
+<span class='va'>p3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"they"</span>, <span class='st'>"their"</span>, <span class='st'>"them"</span>, <span class='st'>"themselves"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<aside>
+<p>Some notes:</p>
+<ul>
+<li><p>The form <em>yourselves</em> does not occur in any of the speeches.</p></li>
+<li><p>Otherwise, the <em>you</em>-forms do not differ between singular and plural; therefore there is only one class for the second person.</p></li>
+<li><p>The third-person pronoun <em>they</em> is only used in plural meaning in the speeches.</p>
+</aside></li>
+</ul>
+<div class="layout-chunk" data-layout="l-body-outset">
+<p><img src="5-pos_files/figure-html5/viz-pronouns-1.png" width="624" /></p>
+</div>
+<p>A few clear trends are obvious:</p>
+<ul>
+<li><p>1st-person singular pronouns become increasingly infrequent; the fewest are in Bush 43’s second inaugural.</p></li>
+<li><p>3-p-sg. pronouns also are on the descent, with Bush 43 (2005) leading.</p></li>
+<li><p>The same is true for 3-p-pl. pronouns.</p></li>
+<li><p>On the increase is the direct address of listeners with <em>you, your</em>, etc.</p></li>
+</ul>
+<h4 id="interpretation-what-pronoun-frequencies-mean">Interpretation: What pronoun frequencies mean</h4>
+<p>As Pennebaker has shown many times <span class="citation" data-cites="kacewicz2013 pennebaker2011">(<a href="#ref-kacewicz2013" role="doc-biblioref">Kacewicz et al. 2013</a>; <a href="#ref-pennebaker2011" role="doc-biblioref">Pennebaker 2011</a>)</span>, higher frequencies of 1-p-sg. pronouns correspond to <em>weak sense of self, depression, lower positions in social hierarchies</em>. By contrast, speakers and writers with a strong sense of self use low frequencies of 1-p-sg.; they instead address other and speak about others.</p>
+<p>By these metrics, the second inaugural by George W. Bush is a reflection of a strong sense of self in the speaker. The stylistic elements in this speech project strength.</p>
+<p>What might be helpful is a qualitative follow-up analysis that looks at such questions as</p>
+<ul>
+<li><p>Why are the 2-p pronouns so high in Bush 43’s second inaugural? Who is the <em>you</em> that he addresses?</p></li>
+<li><p>If Bush 43’s second projects strength, does it also project unity? It is after all striking that the 1-p-pl. pronouns are so (relatively) infrequent.</p></li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>The part-of-speech frequencies provide multiple hints that Bush-2005 stands out among Texan inaugurals. His position at the beginning of his second term was, of course, unique: he and the country were recovering from a big, national trauma. While Johnson’s time before his first inaugural was certainly not trauma-free (and, arguably, neither was Bush-41’s), the traumas that Bush 43 dealt with and the leadership demanded of him at this point were different in nature.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-biber1991" class="csl-entry" role="doc-biblioentry">
+Biber, Douglas. 1991. <em>Variation Across Speech and Writing</em>. Cambridge University Press.
+</div>
+<div id="ref-kacewicz2013" class="csl-entry" role="doc-biblioentry">
+Kacewicz, Ewa, James W. Pennebaker, Matthew Davis, Moongee Jeon, and Arthur C. Graesser. 2013. <span>“Pronoun Use Reflects Standings in Social Hierarchies.”</span> <em>Journal of Language and Social Psychology</em> 33 (2): 125–43. <a href="https://doi.org/10.1177/0261927X13502654">https://doi.org/10.1177/0261927X13502654</a>.
+</div>
+<div id="ref-pennebaker2011" class="csl-entry" role="doc-biblioentry">
+Pennebaker, James W. 2011. <em>The Secret Life of Pronouns: What Our Words Say about Us</em>. 1st edition. Bloomsbury Press.
+</div>
+<div id="ref-pennebaker2014" class="csl-entry" role="doc-biblioentry">
+Pennebaker, James W., Cindy K. Chung, Joey Frazee, Gary M. Lavergne, and David I. Beaver. 2014. <span>“When Small Words Foretell Academic Success: The Case of College Admissions Essays.”</span> <em>PloS One</em> 9 (12): e115844. <a href="https://doi.org/10.1371/journal.pone.0115844">https://doi.org/10.1371/journal.pone.0115844</a>.
+</div>
+</div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -1956,7 +2023,10 @@ Figure 2: Aggregate counts for nominal and verbal POS-groups in the speeches.
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
-<div class="appendix-bottom"></div>
+<div class="appendix-bottom">
+<h3 id="references">References</h3>
+<div id="references-listing"></div>
+</div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->
