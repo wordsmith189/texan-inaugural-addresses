@@ -26,7 +26,7 @@ p_load(tidyverse, tidytext, tm, quanteda,
 
 We analyze the inaugural addresses of the "Texan" presidents. These are
 
--   Lindon B. Johnson (1)
+-   Lyndon B. Johnson (1)
 -   George H.W. Bush (1)
 -   George W. Bush (2)
 

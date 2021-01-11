@@ -1,0 +1,39 @@
+---
+title: "6 Sentiment"
+description: |
+  A sentiment analysis of the speeches.
+author:
+  - name: Lars Hinrichs
+    url: https://larshinrichs.site
+    affiliation: The University of Texas at Austin
+    affiliation_url: https://liberalarts.utexas.edu/english
+date: 12-21-2020
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      cache = TRUE,
+                      cache.lazy = FALSE)
+library(pacman)
+p_load(rio, dplyr, ggplot2, stringr, knitr, kableExtra,
+       beepr, tidytext)
+
+corpus <- import("data/corpus_postagged.RDS")
+```
+
+```{r}
+n_total <- 
+  corpus %>% 
+  count(doc_id) %>% 
+  rename(total = n)
+corpus_sent <- 
+  corpus %>% 
+  mutate(token = tolower(token)) %>% 
+  
+```
+
