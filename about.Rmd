@@ -1,9 +1,24 @@
 ---
 title: "About this blog"
 description: |
-  Some additional details about the blog
+  Why are there analyses of inaugural speeches by Texan presidents on this page?
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+
+![Lars Hinrichs](https://mediad.publicbroadcasting.net/p/wamc/files/styles/large/public/201312/lars_hinrichs.jpg){width="40%"}
+
+
+## Welcome
+
+My name is Lars Hinrichs. You can find more information about me [here](https://larshinrichs.site), and about the Texas English Linguistics Lab [here](www.texasenglish.org).
+
+Presented on this blog are some analyses of the language that was used in the "Texan" inaugural addresses that the country has had so far. I made these to prepare for our segment about Texan inaugurals on [The Texas Standard](https://www.texasstandard.org/stories/categories/texan-translation/).
+
+<aside>The Texas Standard, hosted by David Brown, is a news magazine that airs weekdays on [KUT Public Radio](www.kut.org) in Austin.
+</aside>
+
+The producer of the Texan Translation segment is Michael Marks.
