@@ -4,7 +4,7 @@ description: |
   Texan Inaugural Addresses
 output_dir: "_site"
 base_url: https://texan-inaugurals.netlify.app
-google_analytics: "G-7FEWGJCF57"
+google_analytics: "UA-5137412-19"
 navbar:
   logo: lbj.jpg
   search: false
