@@ -1,13 +1,14 @@
 ---
 title: "3 Keywords"
 description: |
-  Which terms are frequent, and which are significant?
+  Which terms are frequent in the inaugurals of US Presidents from Texas, and which are significant?
 author:
   - name: Lars Hinrichs
     url: https://larshinrichs.site
     affiliation: The University of Texas at Austin
 date: 12-24-2020
 draft: false
+slug: keywords-tf-idf
 output:
   distill::distill_article:
     self_contained: false

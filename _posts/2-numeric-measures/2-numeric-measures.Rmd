@@ -1,7 +1,7 @@
 ---
 title: "2 Numeric Measures"
 description: |
-  Sentence lengths, number of words, etc.
+  Sentence length, number of words, etc.
 author:
   - name: Lars Hinrichs
     url: https://larshinrichs.site

@@ -1,7 +1,7 @@
 name: "Texan Inaugural Addresses"
 title: "Texan Inaugural Addresses"
 description: |
-  Texan Inaugural Addresses
+  Inaugural Addresses by US Presidents from Texas: some linguistic analyses.
 output_dir: "_site"
 base_url: https://texan-inaugurals.netlify.app
 google_analytics: "UA-5137412-19"

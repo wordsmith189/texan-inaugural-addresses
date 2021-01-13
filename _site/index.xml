@@ -4,7 +4,7 @@
     <title>Texan Inaugural Addresses</title>
     <link>https://texan-inaugurals.netlify.app</link>
     <atom:link href="https://texan-inaugurals.netlify.app/index.xml" rel="self" type="application/rss+xml"/>
-    <description>Texan Inaugural Addresses
+    <description>Inaugural Addresses by US Presidents from Texas: some linguistic analyses.
 </description>
     <generator>Distill</generator>
     <lastBuildDate>Fri, 25 Dec 2020 00:00:00 +0000</lastBuildDate>
@@ -21,7 +21,7 @@
       <title>2 Numeric Measures</title>
       <dc:creator>Lars Hinrichs</dc:creator>
       <link>https://texan-inaugurals.netlify.app/posts/2-numeric-measures</link>
-      <description>Sentence lengths, number of words, etc.</description>
+      <description>Sentence length, number of words, etc.</description>
       <guid>https://texan-inaugurals.netlify.app/posts/2-numeric-measures</guid>
       <pubDate>Fri, 25 Dec 2020 00:00:00 +0000</pubDate>
       <media:content url="https://texan-inaugurals.netlify.app/posts/2-numeric-measures/measure.jpg" medium="image" type="image/jpeg"/>
@@ -30,7 +30,7 @@
       <title>3 Keywords</title>
       <dc:creator>Lars Hinrichs</dc:creator>
       <link>https://texan-inaugurals.netlify.app/posts/3-keywords</link>
-      <description>Which terms are frequent, and which are significant?</description>
+      <description>Which terms are frequent in the inaugurals of US Presidents from Texas, and which are significant?</description>
       <guid>https://texan-inaugurals.netlify.app/posts/3-keywords</guid>
       <pubDate>Thu, 24 Dec 2020 00:00:00 +0000</pubDate>
       <media:content url="https://texan-inaugurals.netlify.app/posts/3-keywords/key.png" medium="image" type="image/png" width="606" height="185"/>
