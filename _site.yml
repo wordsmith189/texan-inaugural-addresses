@@ -1,7 +1,8 @@
 name: "Texan Inaugural Addresses"
 title: "Texan Inaugural Addresses"
 description: |
-  Inaugural Addresses by US Presidents from Texas: some linguistic analyses.
+  Inaugural Addresses by US Presidents from Texas under a computational-rhetoric lense: 
+  some quantitative analyses of selected language features.
 output_dir: "_site"
 base_url: https://texan-inaugurals.netlify.app
 google_analytics: "UA-5137412-19"
@@ -11,6 +12,14 @@ navbar:
   right:
     - text: "Home"
       href: index.html
+    - text: "Analyses"
+      menu: 
+        - text: "1 The Data"
+          href: posts/1-the-data/
+        - text: "2 Numeric Measures"
+          href: posts/2-numeric-measures/
+        - text: "3 Keywords"
+          href: posts/3-keywords/
     - text: "About"
       href: about.html
 output: distill::distill_article

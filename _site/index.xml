@@ -4,7 +4,8 @@
     <title>Texan Inaugural Addresses</title>
     <link>https://texan-inaugurals.netlify.app</link>
     <atom:link href="https://texan-inaugurals.netlify.app/index.xml" rel="self" type="application/rss+xml"/>
-    <description>Inaugural Addresses by US Presidents from Texas: some linguistic analyses.
+    <description>Inaugural Addresses by US Presidents from Texas under a computational-rhetoric lense: 
+some quantitative analyses of selected language features.
 </description>
     <generator>Distill</generator>
     <lastBuildDate>Fri, 25 Dec 2020 00:00:00 +0000</lastBuildDate>
@@ -12,7 +13,7 @@
       <title>1 The Data</title>
       <dc:creator>Lars Hinrichs</dc:creator>
       <link>https://texan-inaugurals.netlify.app/posts/1-the-data</link>
-      <description>Scope, source, and preparation of the data.</description>
+      <description>Scope, source, and preparation of the data. The texts are taken from the R-package "quanteda".</description>
       <guid>https://texan-inaugurals.netlify.app/posts/1-the-data</guid>
       <pubDate>Fri, 25 Dec 2020 00:00:00 +0000</pubDate>
       <media:content url="https://texan-inaugurals.netlify.app/posts/1-the-data/lbj.inaug.jpg" medium="image" type="image/jpeg"/>

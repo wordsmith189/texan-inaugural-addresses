@@ -2,7 +2,7 @@
   {
     "path": "posts/1-the-data/",
     "title": "1 The Data",
-    "description": "Scope, source, and preparation of the data.",
+    "description": "Scope, source, and preparation of the data. The texts are taken from the R-package \"quanteda\".",
     "author": [
       {
         "name": "Lars Hinrichs",
@@ -13,8 +13,8 @@
     "categories": [],
     "contents": "\n\nContents\nScope of the data\nSource of the data\n\nScope of the data\nWe analyze the inaugural addresses of the “Texan” presidents. These are\nLyndon B. Johnson (1)\nGeorge H.W. Bush (1)\nGeorge W. Bush (2)\nTo justify this choice, it is important to note that we are interested in “culturally” Texan presidents. If we were interested in place of birth, we’d also have to include Eisenhower (born in TX but didn’t live there), and not the Bushes (born outside of TX but lived there).\n\n\n\nSource of the data\nWe’re using the version of the speeches that is included in the quanteda R-package (Benoit et al. 2018). The following code grabs the speeches from the package in the corpus data format, then converts it to a regular dataframe.\n\n\ntxpres <- c(\"Johnson\", \"Bush\")\ncorpus <- data_corpus_inaugural %>% \n  quanteda::convert(to = \"data.frame\") %>% \n  filter(President %in% txpres) %>% \n  mutate(nickname = case_when(\n    FirstName == \"Lyndon Baines\" ~ \"LBJ\",\n    FirstName == \"George\" ~ \"Bush41\",\n    TRUE ~ \"Bush43\"\n  )) %>% \n  janitor::clean_names()\n\ncorpus %>% \n  mutate(text = str_sub(text, 1, 40)) %>% \n  as_tibble() %>% \n  kbl() %>% \n  kable_paper()\n\n\n\ndoc_id\n\n\ntext\n\n\nyear\n\n\npresident\n\n\nfirst_name\n\n\nparty\n\n\nnickname\n\n\n1965-Johnson\n\n\nMy fellow countrymen, on this occasion,\n\n\n1965\n\n\nJohnson\n\n\nLyndon Baines\n\n\nDemocratic\n\n\nLBJ\n\n\n1989-Bush\n\n\nMr. Chief Justice, Mr. President, Vice P\n\n\n1989\n\n\nBush\n\n\nGeorge\n\n\nRepublican\n\n\nBush41\n\n\n2001-Bush\n\n\nPresident Clinton, distinguished guests\n\n\n2001\n\n\nBush\n\n\nGeorge W.\n\n\nRepublican\n\n\nBush43\n\n\n2005-Bush\n\n\nVice President Cheney, Mr. Chief Justice\n\n\n2005\n\n\nBush\n\n\nGeorge W.\n\n\nRepublican\n\n\nBush43\n\n\nDown the line, this data can be tokenized and/or marked up as needed. We’ll save this version so we can come back to it.\n\n\n\n\n\n\nBenoit, Kenneth, Kohei Watanabe, Haiyan Wang, Paul Nulty, Adam Obeng, Stefan Müller, and Akitaka Matsuo. 2018. “Quanteda: An r Package for the Quantitative Analysis of Textual Data.” Journal of Open Source Software 3 (30): 774. https://doi.org/10.21105/joss.00774.\n\n\n\n\n",
     "preview": "posts/1-the-data/lbj.inaug.jpg",
-    "last_modified": "2021-01-11T11:53:56-05:00",
-    "input_file": {}
+    "last_modified": "2021-01-15T13:25:35-05:00",
+    "input_file": "1-the-data.utf8.md"
   },
   {
     "path": "posts/2-numeric-measures/",

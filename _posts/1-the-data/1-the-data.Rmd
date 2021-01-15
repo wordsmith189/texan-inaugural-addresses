@@ -1,7 +1,7 @@
 ---
 title: "1 The Data"
 description: |
-  Scope, source, and preparation of the data.
+  Scope, source, and preparation of the data. The texts are taken from the R-package "quanteda".
 author:
   - name: Lars Hinrichs
     url: https://larshinrichs.site
