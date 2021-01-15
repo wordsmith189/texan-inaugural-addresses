@@ -6,14 +6,14 @@
       "description": "Why are there analyses of inaugural speeches by Texan presidents on this page? And acknowledgements.\n",
       "author": [],
       "contents": "\nLars HinrichsMy name is Lars Hinrichs. You can find more information about me here, and about the Texas English Linguistics Lab here.\nPresented on this blog are some analyses of the language that was used in the “Texan” inaugural addresses that the country has had so far. I made these to prepare for our segment about Texan inaugurals on The Texas Standard.\nThe Texas Standard, hosted by David Brown, is a news magazine that airs weekdays on KUT Public Radio in Austin.\nThe Texan Translation segment is produced by Michael Marks.\nAnalyses were conducted in R (R Core Team 2020) and tidyverse (Wickham et al. 2019) using the RStudio GUI (RStudio Team 2020).\nThe text of the inaugural addresses was obtained from the quanteda R-package (Benoit et al. 2018).\nThis website was made using the distill package for R (Allaire et al. 2020).\n\n\n\nAllaire, J. J., Rich Iannone, Alison Presmanes Hill, and Yihui Xie. 2020. Distill: ’r Markdown’ Format for Scientific and Technical Writing. https://CRAN.R-project.org/package=distill.\n\n\nBenoit, Kenneth, Kohei Watanabe, Haiyan Wang, Paul Nulty, Adam Obeng, Stefan Müller, and Akitaka Matsuo. 2018. “Quanteda: An r Package for the Quantitative Analysis of Textual Data.” Journal of Open Source Software 3 (30): 774. https://doi.org/10.21105/joss.00774.\n\n\nR Core Team. 2020. R: A Language and Environment for Statistical Computing. Vienna, Austria: R Foundation for Statistical Computing. https://www.R-project.org/.\n\n\nRStudio Team. 2020. RStudio: Integrated Development Environment for r. Boston, MA: RStudio, PBC. http://www.rstudio.com/.\n\n\nWickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. “Welcome to the Tidyverse.” Journal of Open Source Software 4 (43): 1686. https://doi.org/10.21105/joss.01686.\n\n\n\n\n",
-      "last_modified": "2021-01-15T13:44:13-05:00"
+      "last_modified": "2021-01-15T13:46:57-05:00"
     },
     {
       "path": "index.html",
       "title": "Texan Inaugural Addresses",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-01-15T13:44:14-05:00"
+      "last_modified": "2021-01-15T13:46:58-05:00"
     }
   ],
   "collections": ["posts/posts.json"]

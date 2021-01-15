@@ -20,6 +20,12 @@ navbar:
           href: posts/2-numeric-measures/
         - text: "3 Keywords"
           href: posts/3-keywords/
+        - text: "4 Complexity"
+          href: posts/4-complexity/
+        - text: "5 Parts of Speech"
+          href: posts/5-pos/
+        - text: "6 Sentiment"
+          href: posts/6-sentiment/
     - text: "About"
       href: about.html
 output: distill::distill_article
