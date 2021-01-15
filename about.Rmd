@@ -1,7 +1,7 @@
 ---
-title: "About this blog"
+title: "About this Website"
 description: |
-  Why are there analyses of inaugural speeches by Texan presidents on this page? And acknowledgements.
+  Why there are analyses of inaugural speeches by Texan presidents on this page? And some acknowledgements.
 bibliography: references.bib
 ---
 
