@@ -133,7 +133,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["6-sentiment_files/anchor-4.2.2/anchor.min.js","6-sentiment_files/bowser-1.9.3/bowser.min.js","6-sentiment_files/distill-2.2.21/template.v2.js","6-sentiment_files/figure-html5/top-neg-terms-1.png","6-sentiment_files/figure-html5/top-pos-terms-1.png","6-sentiment_files/figure-html5/viz-sentiment-1.png","6-sentiment_files/header-attrs-2.5/header-attrs.js","6-sentiment_files/jquery-1.11.3/jquery.min.js","6-sentiment_files/webcomponents-2.0.0/webcomponents.js","data/corpus_postagged.RDS","references.bib"]}
+  {"type":"character","attributes":{},"value":["6-sentiment_files/anchor-4.2.2/anchor.min.js","6-sentiment_files/bowser-1.9.3/bowser.min.js","6-sentiment_files/distill-2.2.21/template.v2.js","6-sentiment_files/figure-html5/pos-neg-ratio-1.png","6-sentiment_files/figure-html5/top-neg-terms-1.png","6-sentiment_files/figure-html5/top-pos-terms-1.png","6-sentiment_files/figure-html5/viz-sentiment-1.png","6-sentiment_files/header-attrs-2.5/header-attrs.js","6-sentiment_files/jquery-1.11.3/jquery.min.js","6-sentiment_files/webcomponents-2.0.0/webcomponents.js","data/corpus_postagged.RDS","references.bib"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -1836,6 +1836,7 @@ gtag('config', 'UA-5137412-19');
 <li><a href="#top-positive-terms">Top Positive Terms</a></li>
 <li><a href="#top-negative-terms">Top Negative Terms</a></li>
 </ul></li>
+<li><a href="#positive-to-negative-ratio">Positive-to-Negative Ratio</a></li>
 <li><a href="#interpretation">Interpretation</a></li>
 </ul>
 </nav>
@@ -1867,6 +1868,11 @@ Figure 1: Sentiment analysis: top-ranked positive terms.
 Figure 2: Sentiment analysis: top-ranked negative terms.
 </p>
 </div>
+</div>
+<h2 id="positive-to-negative-ratio">Positive-to-Negative Ratio</h2>
+<p>The following plot shows the pos:neg ratio for the speeches.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="6-sentiment_files/figure-html5/pos-neg-ratio-1.png" width="624" /></p>
 </div>
 <h2 id="interpretation">Interpretation</h2>
 <p>Once again, 2005-Bush stands out: it has by far the highest frequency of emotionally loaded terms out of all four speeches. When we look closer, we see that much of this is attributable to the hyper-frequent use of <strong>freedom</strong> and <strong>free</strong>.</p>

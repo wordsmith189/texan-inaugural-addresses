@@ -184,6 +184,34 @@ terms_neg %>%
 
 ```
 
+## Positive-to-Negative Ratio
+
+The following plot shows the pos:neg ratio for the speeches.
+
+```{r pos-neg-ratio}
+n_sent %>% 
+  select(-sent_norm) %>% 
+  tidyr::pivot_wider(
+    names_from = sentiment,
+    values_from = n
+  ) %>% 
+  mutate(ratio = positive/negative) %>% 
+  #----------#
+  ggplot(aes(doc_id, ratio,
+             fill = doc_id)) +
+  geom_col(width = .4,
+           show.legend = F) +
+  scale_fill_manual(values = pal) +
+  labs(title = "Sentiment Ratio in Texan Inaugurals",
+       subtitle = 
+         expression(italic("N") [positive] / italic("N") [negative]),
+       x=NULL,
+       caption = "www.texasenglish.org") +
+  theme_bw(base_family = "Volkhov-Regular",
+           base_size = 10) 
+```
+
+
 ## Interpretation
 
 Once again, 2005-Bush stands out: it has by far the highest frequency of emotionally loaded terms out of all four speeches. When we look closer, we see that much of this is attributable to the hyper-frequent use of **freedom** and **free**.
