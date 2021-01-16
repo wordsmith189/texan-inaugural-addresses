@@ -1,6 +1,5 @@
 
-# "Texan Inaugural Speeches: A Computational Analysis"
-
+# Texan Inaugural Speeches: A Computational Analysis
 
 My area of academic interest is Texas English (TxE), and in this study I look at the language as used in inaugural speeches by US Presidents from Texas. When I say "from" Texas, that is with some license: maybe it's better to say "Texan" presidents? Anyway, the group is:
 
