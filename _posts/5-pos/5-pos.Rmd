@@ -8,6 +8,7 @@ author:
     affiliation: The University of Texas at Austin
     affiliation_url: https://liberalarts.utexas.edu/english
 date: 12-22-2020
+preview: bricks.png
 output:
   distill::distill_article:
     self_contained: false
@@ -23,6 +24,8 @@ library(pacman)
 p_load(rio, dplyr, ggplot2, stringr, knitr, kableExtra,
        beepr)
 ```
+
+![If nouns are bricks, are verbs mortar?](bricks.png){width="50%"}
 
 ## Data tagging
 

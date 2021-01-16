@@ -16,7 +16,7 @@ some quantitative analyses of selected language features.
       <description>Scope, source, and preparation of the data. The texts are taken from the R-package "quanteda".</description>
       <guid>https://texan-inaugurals.netlify.app/posts/1-the-data</guid>
       <pubDate>Fri, 25 Dec 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://texan-inaugurals.netlify.app/posts/1-the-data/lbj.inaug.jpg" medium="image" type="image/jpeg"/>
+      <media:content url="https://texan-inaugurals.netlify.app/posts/1-the-data/inaug.png" medium="image" type="image/png" width="700" height="280"/>
     </item>
     <item>
       <title>2 Numeric Measures</title>
@@ -25,7 +25,7 @@ some quantitative analyses of selected language features.
       <description>Sentence length, number of words, etc.</description>
       <guid>https://texan-inaugurals.netlify.app/posts/2-numeric-measures</guid>
       <pubDate>Fri, 25 Dec 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://texan-inaugurals.netlify.app/posts/2-numeric-measures/measure.jpg" medium="image" type="image/jpeg"/>
+      <media:content url="https://texan-inaugurals.netlify.app/posts/2-numeric-measures/measures.png" medium="image" type="image/png" width="700" height="280"/>
     </item>
     <item>
       <title>3 Keywords</title>
@@ -34,7 +34,7 @@ some quantitative analyses of selected language features.
       <description>Which terms are frequent in the inaugurals of US Presidents from Texas, and which are significant?</description>
       <guid>https://texan-inaugurals.netlify.app/posts/3-keywords</guid>
       <pubDate>Thu, 24 Dec 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://texan-inaugurals.netlify.app/posts/3-keywords/key.png" medium="image" type="image/png" width="606" height="185"/>
+      <media:content url="https://texan-inaugurals.netlify.app/posts/3-keywords/key.png" medium="image" type="image/png" width="700" height="280"/>
     </item>
     <item>
       <title>4 Complexity</title>
@@ -52,7 +52,7 @@ some quantitative analyses of selected language features.
       <description>The frequency of various parts of speech.</description>
       <guid>https://texan-inaugurals.netlify.app/posts/5-pos</guid>
       <pubDate>Tue, 22 Dec 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://texan-inaugurals.netlify.app/posts/5-pos/5-pos_files/figure-html5/show-freqs-panel-1.png" medium="image" type="image/png" width="1248" height="768"/>
+      <media:content url="https://texan-inaugurals.netlify.app/posts/5-pos/bricks.png" medium="image" type="image/png" width="700" height="280"/>
     </item>
     <item>
       <title>6 Sentiment</title>
@@ -61,7 +61,7 @@ some quantitative analyses of selected language features.
       <description>A sentiment analysis of the speeches.</description>
       <guid>https://texan-inaugurals.netlify.app/posts/6-sentiment</guid>
       <pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://texan-inaugurals.netlify.app/posts/6-sentiment/6-sentiment_files/figure-html5/viz-sentiment-1.png" medium="image" type="image/png" width="1248" height="768"/>
+      <media:content url="https://texan-inaugurals.netlify.app/posts/6-sentiment/sentiments.png" medium="image" type="image/png" width="700" height="280"/>
     </item>
   </channel>
 </rss>

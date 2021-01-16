@@ -112,12 +112,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["1 The Data"]},{"type":"character","attributes":{},"value":["Scope, source, and preparation of the data. The texts are taken from the R-package \"quanteda\".\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Lars Hinrichs"]},{"type":"character","attributes":{},"value":["https://larshinrichs.site"]},{"type":"character","attributes":{},"value":["The University of Texas at Austin"]}]}]},{"type":"character","attributes":{},"value":["12-25-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["references.bib"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","preview","output","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["1 The Data"]},{"type":"character","attributes":{},"value":["Scope, source, and preparation of the data. The texts are taken from the R-package \"quanteda\".\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Lars Hinrichs"]},{"type":"character","attributes":{},"value":["https://larshinrichs.site"]},{"type":"character","attributes":{},"value":["The University of Texas at Austin"]}]}]},{"type":"character","attributes":{},"value":["12-25-2020"]},{"type":"character","attributes":{},"value":["inaug.png"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["references.bib"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["1-the-data_files/anchor-4.2.2/anchor.min.js","1-the-data_files/bowser-1.9.3/bowser.min.js","1-the-data_files/distill-2.2.21/template.v2.js","1-the-data_files/header-attrs-2.5/header-attrs.js","1-the-data_files/jquery-1.11.3/jquery.min.js","1-the-data_files/kePrint-0.0.1/kePrint.js","1-the-data_files/lightable-0.0.1/lightable.css","1-the-data_files/webcomponents-2.0.0/webcomponents.js","lbj.inaug.jpg","references.bib"]}
+  {"type":"character","attributes":{},"value":["1-the-data_files/anchor-4.2.2/anchor.min.js","1-the-data_files/bowser-1.9.3/bowser.min.js","1-the-data_files/distill-2.2.21/template.v2.js","1-the-data_files/header-attrs-2.5/header-attrs.js","1-the-data_files/jquery-1.11.3/jquery.min.js","1-the-data_files/kePrint-0.0.1/kePrint.js","1-the-data_files/lightable-0.0.1/lightable.css","1-the-data_files/webcomponents-2.0.0/webcomponents.js","inaug.png","lbj.inaug.jpg","references.bib"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1464,9 +1464,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>George W. Bush (2)</li>
 </ul>
 <p>To justify this choice, it is important to note that we are interested in “culturally” Texan presidents. If we were interested in place of birth, we’d also have to include Eisenhower (born in TX but didn’t live there), and not the Bushes (born outside of TX but lived there).</p>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="lbj.inaug.jpg" width="575" /></p>
-</div>
+<figure>
+<img src="inaug.png" style="width:50.0%" alt="Bush 45’s inauguration." /><figcaption aria-hidden="true">Bush 45’s inauguration.</figcaption>
+</figure>
 <h2 id="source-of-the-data">Source of the data</h2>
 <p>We’re using the version of the speeches that is included in the <code>quanteda</code> R-package <span class="citation" data-cites="benoit2018">(<a href="#ref-benoit2018" role="doc-biblioref">Benoit et al. 2018</a>)</span>. The following code grabs the speeches from the package in the <code>corpus</code> data format, then converts it to a regular dataframe.</p>
 <div class="layout-chunk" data-layout="l-body">

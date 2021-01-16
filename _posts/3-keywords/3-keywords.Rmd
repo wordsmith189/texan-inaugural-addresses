@@ -8,6 +8,7 @@ author:
     affiliation: The University of Texas at Austin
 date: 12-24-2020
 draft: false
+preview: key.png
 slug: keywords-tf-idf
 output:
   distill::distill_article:
@@ -23,9 +24,8 @@ p_load(tidyverse, tidytext, tm, quanteda,
        cowplot)
 ```
 
-```{r show-img}
-include_graphics("key.png")
-```
+
+![Words can be keys.](key.png){width="50%"}
 
 ```{r load-data}
 corpus <- import("../../data/corpus.RDS")

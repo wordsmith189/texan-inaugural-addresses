@@ -111,12 +111,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["6 Sentiment"]},{"type":"character","attributes":{},"value":["A sentiment analysis of the speeches.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Lars Hinrichs"]},{"type":"character","attributes":{},"value":["https://larshinrichs.site"]},{"type":"character","attributes":{},"value":["The University of Texas at Austin"]},{"type":"character","attributes":{},"value":["https://liberalarts.utexas.edu/english"]}]}]},{"type":"character","attributes":{},"value":["12-21-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["references.bib"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","preview","output","bibliography"]}},"value":[{"type":"character","attributes":{},"value":["6 Sentiment"]},{"type":"character","attributes":{},"value":["A sentiment analysis of the speeches.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Lars Hinrichs"]},{"type":"character","attributes":{},"value":["https://larshinrichs.site"]},{"type":"character","attributes":{},"value":["The University of Texas at Austin"]},{"type":"character","attributes":{},"value":["https://liberalarts.utexas.edu/english"]}]}]},{"type":"character","attributes":{},"value":["12-21-2020"]},{"type":"character","attributes":{},"value":["sentiments.png"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["references.bib"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["6-sentiment_files/anchor-4.2.2/anchor.min.js","6-sentiment_files/bowser-1.9.3/bowser.min.js","6-sentiment_files/distill-2.2.21/template.v2.js","6-sentiment_files/figure-html5/pos-neg-ratio-1.png","6-sentiment_files/figure-html5/top-neg-terms-1.png","6-sentiment_files/figure-html5/top-pos-terms-1.png","6-sentiment_files/figure-html5/viz-sentiment-1.png","6-sentiment_files/header-attrs-2.5/header-attrs.js","6-sentiment_files/jquery-1.11.3/jquery.min.js","6-sentiment_files/webcomponents-2.0.0/webcomponents.js","data/corpus_postagged.RDS","references.bib"]}
+  {"type":"character","attributes":{},"value":["6-sentiment_files/anchor-4.2.2/anchor.min.js","6-sentiment_files/bowser-1.9.3/bowser.min.js","6-sentiment_files/distill-2.2.21/template.v2.js","6-sentiment_files/figure-html5/pos-neg-ratio-1.png","6-sentiment_files/figure-html5/top-neg-terms-1.png","6-sentiment_files/figure-html5/top-pos-terms-1.png","6-sentiment_files/figure-html5/viz-sentiment-1.png","6-sentiment_files/header-attrs-2.5/header-attrs.js","6-sentiment_files/jquery-1.11.3/jquery.min.js","6-sentiment_files/webcomponents-2.0.0/webcomponents.js","data/corpus_postagged.RDS","references.bib","sentiments.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1462,6 +1462,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul>
 </nav>
 </div>
+<figure>
+<img src="sentiments.png" style="width:50.0%" alt="Some words are happy, others are sad." /><figcaption aria-hidden="true">Some words are happy, others are sad.</figcaption>
+</figure>
 <h2 id="overall-sentiment">Overall sentiment</h2>
 <p>In sentiment analysis, each word is scored for its emotional base value. Some words have a positive core, others negative. Not all words are recognized as conveying emotion: only a little under 10% of all words receive a score, at least that’s the case with these speeches.</p>
 <h3 id="global-scores-per-speech">Global Scores per Speech</h3>
