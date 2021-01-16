@@ -1,7 +1,7 @@
 ---
-title: "About this blog"
+title: "About this Website"
 description: |
-  Why are there analyses of inaugural speeches by Texan presidents on this page? And acknowledgements.
+  Why there are analyses of inaugural speeches by Texan presidents on this page? And some acknowledgements.
 bibliography: references.bib
 ---
 
@@ -28,5 +28,3 @@ Analyses were conducted in R [@rcoreteam2020] and `tidyverse` [@wickham2019] usi
 The text of the inaugural addresses was obtained from the `quanteda` R-package [@benoit2018].
 
 This website was made using the `distill` package for R [@allaire2020].
-
-Code for this website is hosted at [this Github repo](https://github.com/wordsmith189/texan-inaugural-addresses).
