@@ -32,7 +32,6 @@ p_load(rio, dplyr, ggplot2, stringr, knitr, kableExtra,
 The four speeches will be part-of-speech tagged (POS-tagged) for this analysis, so that each word will be marked for its grammatical class.
 
 <aside>
-
 POS-tagging was performed using the `cleanNLP` R-package [@arnold2017] and the `reticulate` Python-interface package [@ushey2020].
 </aside>
 
@@ -350,4 +349,4 @@ What might be helpful is a qualitative follow-up analysis that looks at such que
 
 ## Conclusion
 
-The part-of-speech frequencies provide multiple hints that Bush-2005 stands out among Texan inaugurals. His position at the beginning of his second term was, of course, unique: he and the country were recovering from a big, national trauma. While Johnson's time before his first inaugural was certainly not trauma-free (and, arguably, neither was Bush-41's), the traumas that Bush 43 dealt with and the leadership demanded of him at this point were different in nature.
+The POS frequencies provide multiple hints that Bush-2005 stands out among Texan inaugurals. His position at the beginning of his second term was, of course, unique: he and the country were recovering from a big, national trauma. While Johnson's time before his first inaugural was certainly not trauma-free (and, arguably, neither was Bush-41's), the traumas that Bush 43 dealt with and the leadership demanded of him at this point were different in nature.
