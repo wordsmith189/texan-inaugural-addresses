@@ -25,7 +25,7 @@ p_load(tidyverse, tidytext, tm, quanteda,
 ```
 
 
-![Words can be keys.](key.png){width="50%"}
+![Words are key. (Image from everyday basics/unsplash.com.)](key.png){width="60%"}
 
 ```{r load-data}
 corpus <- import("../../data/corpus.RDS")

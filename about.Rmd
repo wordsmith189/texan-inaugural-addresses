@@ -21,8 +21,6 @@ The Texas Standard, hosted by David Brown, is a news magazine that airs weekdays
 
 </aside>
 
-Analyses were conducted in R [@rcoreteam2020] and `tidyverse` [@wickham2019] using the RStudio GUI [@rstudioteam2020].
-
-The text of the inaugural addresses was obtained from the `quanteda` R-package [@benoit2018].
+Analyses and visualizations were conducted in R [@rcoreteam2020] and `tidyverse` [@wickham2019] using the RStudio GUI [@rstudioteam2020]. The central package used in the NLP transformations is `tidytext` [@silge2016]. The text of the inaugural addresses was obtained from the `quanteda` R-package [@benoit2018]. POS-tagging was performed with `cleanNLP` [@arnold2017] and `reticulate` [@ushey2020].
 
 This website was made using the `distill` package for R [@allaire2020].

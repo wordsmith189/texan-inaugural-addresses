@@ -7,6 +7,7 @@ author:
     url: https://larshinrichs.site
 date: 12-23-2020
 draft: false
+preview: complexity.png
 output:
   distill::distill_article:
     self_contained: false
@@ -21,9 +22,8 @@ p_load(tidyverse, tidytext, tm, quanteda,
        knitr, kableExtra, rio)
 ```
 
-```{r show-img}
-include_graphics("complexity.jpg")
-```
+
+![Complexity. (Image from J. Barkiple/unsplash.com.)](complexity.png){width="60%"}
 
 ## Two meaningful words
 
@@ -84,6 +84,7 @@ andbutcounts %>%
 ```
 
 We see that *and* and *but a*re most frequent in the latter Bush's speeches. So tentatively, he is the one who most embraces simple (clear?) rhetoric.
+
 
 ## A look at all connectors in comparison
 

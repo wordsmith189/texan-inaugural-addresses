@@ -28,7 +28,7 @@ p_load(rio, dplyr, ggplot2, stringr, knitr,
 corpus <- import("data/corpus_postagged.RDS")
 ```
 
-![Some words are happy, others are sad.](sentiments.png){width="50%"}
+![Words are like eggs: some are happy, some are sad. <br>(Image from Tengyart/unsplash.com.)](sentiments.png){width="60%"}
 
 ## Overall sentiment
 

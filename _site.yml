@@ -6,6 +6,7 @@ description: |
 output_dir: "_site"
 base_url: https://texan-inaugurals.netlify.app
 google_analytics: "UA-5137412-19"
+creative_commons: CC BY
 navbar:
   logo: lbj.jpg
   search: false

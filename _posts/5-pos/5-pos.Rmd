@@ -25,7 +25,7 @@ p_load(rio, dplyr, ggplot2, stringr, knitr, kableExtra,
        beepr)
 ```
 
-![If nouns are bricks, are verbs mortar?](bricks.png){width="50%"}
+![If nouns are bricks, are verbs mortar? (Image from M. Haupt/unsplash.com.)](bricks.png){width="60%"}
 
 ## Data tagging
 

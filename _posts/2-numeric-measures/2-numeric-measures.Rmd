@@ -26,7 +26,7 @@ p_load(tidyverse, tidytext, tm, quanteda,
 corpus <- import("../../data/corpus.RDS")
 ```
 
-![Numeric measures.](measures.png){width="50%"}
+![Numeric measures. (Image from M. Winkler/unsplash.com.)](measures.png){width="60%"}
 
 ## Words
 
