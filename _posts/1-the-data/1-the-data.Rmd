@@ -33,7 +33,7 @@ We analyze the inaugural addresses of the "Texan" presidents. These are
 
 To justify this choice, it is important to note that we are interested in "culturally" Texan presidents. If we were interested in place of birth, we'd also have to include Eisenhower (born in TX but didn't live there), and not the Bushes (born outside of TX but lived there).
 
-![Bush 45's inauguration.](inaug.png){width="50%"}
+![One of Bush 45's inaugurations.](inaug.png){width="50%"}
 
 ## Source of the data
 
