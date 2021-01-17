@@ -127,6 +127,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
   <meta name="citation_reference" content="citation_title=When small words foretell academic success: The case of college admissions essays;citation_publication_date=2014;citation_volume=9;citation_doi=10.1371/journal.pone.0115844;citation_author=James W. Pennebaker;citation_author=Cindy K. Chung;citation_author=Joey Frazee;citation_author=Gary M. Lavergne;citation_author=David I. Beaver"/>
   <meta name="citation_reference" content="citation_title=Variation across speech and writing;citation_publication_date=1991;citation_publisher=Cambridge University Press;citation_author=Douglas Biber"/>
+  <meta name="citation_reference" content="citation_title=A tidy data model for natural language processing using cleanNLP;citation_publication_date=2017;citation_volume=9;citation_author=Taylor Arnold"/>
+  <meta name="citation_reference" content="citation_title=Reticulate: Interface to ’python’;citation_publication_date=2020;citation_author=Kevin Ushey;citation_author=J. J. Allaire;citation_author=Yuan Tang"/>
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
@@ -1864,7 +1866,10 @@ Analyses
 <img src="bricks.png" style="width:50.0%" alt="If nouns are bricks, are verbs mortar?" /><figcaption aria-hidden="true">If nouns are bricks, are verbs mortar?</figcaption>
 </figure>
 <h2 id="data-tagging">Data tagging</h2>
-<p>The four speeches will be part-of-speech tagged for this analysis, so that each word will be marked for its grammatical class.</p>
+<p>The four speeches will be part-of-speech tagged (POS-tagged) for this analysis, so that each word will be marked for its grammatical class.</p>
+<aside>
+POS-tagging was performed using the <code>cleanNLP</code> R-package <span class="citation" data-cites="arnold2017">(<a href="#ref-arnold2017" role="doc-biblioref">Arnold 2017</a>)</span> and the <code>reticulate</code> Python-interface package <span class="citation" data-cites="ushey2020">(<a href="#ref-ushey2020" role="doc-biblioref">Ushey, Allaire, and Tang 2020</a>)</span>.
+</aside>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
@@ -2399,6 +2404,9 @@ Figure 2: Aggregate counts for nominal and verbal POS-groups in the speeches.
 <p>The part-of-speech frequencies provide multiple hints that Bush-2005 stands out among Texan inaugurals. His position at the beginning of his second term was, of course, unique: he and the country were recovering from a big, national trauma. While Johnson’s time before his first inaugural was certainly not trauma-free (and, arguably, neither was Bush-41’s), the traumas that Bush 43 dealt with and the leadership demanded of him at this point were different in nature.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-arnold2017" class="csl-entry" role="doc-biblioentry">
+Arnold, Taylor. 2017. <span>“A Tidy Data Model for Natural Language Processing Using cleanNLP.”</span> <em>The R Journal</em> 9 (2): 120. <a href="https://journal.r-project.org/archive/2017/RJ-2017-035/index.html">https://journal.r-project.org/archive/2017/RJ-2017-035/index.html</a>.
+</div>
 <div id="ref-biber1991" class="csl-entry" role="doc-biblioentry">
 Biber, Douglas. 1991. <em>Variation Across Speech and Writing</em>. Cambridge University Press.
 </div>
@@ -2410,6 +2418,9 @@ Pennebaker, James W. 2011. <em>The Secret Life of Pronouns: What Our Words Say a
 </div>
 <div id="ref-pennebaker2014" class="csl-entry" role="doc-biblioentry">
 Pennebaker, James W., Cindy K. Chung, Joey Frazee, Gary M. Lavergne, and David I. Beaver. 2014. <span>“When Small Words Foretell Academic Success: The Case of College Admissions Essays.”</span> <em>PloS One</em> 9 (12): e115844. <a href="https://doi.org/10.1371/journal.pone.0115844">https://doi.org/10.1371/journal.pone.0115844</a>.
+</div>
+<div id="ref-ushey2020" class="csl-entry" role="doc-biblioentry">
+Ushey, Kevin, J. J. Allaire, and Yuan Tang. 2020. <em>Reticulate: Interface to ’python’</em>. <a href="https://CRAN.R-project.org/package=reticulate">https://CRAN.R-project.org/package=reticulate</a>.
 </div>
 </div>
 <!--radix_placeholder_article_footer-->

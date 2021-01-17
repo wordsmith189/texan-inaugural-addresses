@@ -29,7 +29,12 @@ p_load(rio, dplyr, ggplot2, stringr, knitr, kableExtra,
 
 ## Data tagging
 
-The four speeches will be part-of-speech tagged for this analysis, so that each word will be marked for its grammatical class.
+The four speeches will be part-of-speech tagged (POS-tagged) for this analysis, so that each word will be marked for its grammatical class.
+
+<aside>
+
+POS-tagging was performed using the `cleanNLP` R-package [@arnold2017] and the `reticulate` Python-interface package [@ushey2020].
+</aside>
 
 ```{r run-pos-tagging, eval=F}
 # init tagging
@@ -110,12 +115,31 @@ The following plot shows these values ordered by POS-tag.
 ```{r show-freqs-panel, fig.cap="Comparison of POS frequencies.", layout="l-body-outset"}
 
 pal <- wesanderson::wes_palette("Darjeeling2", 4, type = "discrete")
+
+upos <- n_pos %>% pull(upos) %>% unique()
+
+upos.names <- c("adjective", "preposition", "adverb",
+                      "auxiliary", "coord. conjunction", "article/determiner",
+                      "interjection", "common noun", "numeral",
+                      "particle", "pronoun", "proper noun",
+                      "subord. conjunction", "verb"
+                      )
+
+matcher = tibble(upos, upos.names)
+
+n_pos <- 
+  n_pos %>% 
+  left_join(matcher)
+
+
 n_pos %>% 
   ggplot(aes(x=doc_id,
              y=freq_per_1000,
              fill=doc_id)) +
   geom_col(width = .45) +
-  facet_wrap(~upos, scales = "free") +
+  facet_wrap(~upos.names, 
+             scales = "free"
+             ) +
   labs(
     title = "Parts of Speech in Texan Inaugurals",
     subtitle = "Frequencies per 1,000 words",
