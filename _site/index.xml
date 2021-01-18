@@ -33,7 +33,7 @@ some quantitative analyses of selected language features.
       <link>https://texan-inaugurals.netlify.app/posts/3-keywords</link>
       <description>Which terms are frequent in the inaugurals of US Presidents from Texas, and which are significant?</description>
       <guid>https://texan-inaugurals.netlify.app/posts/3-keywords</guid>
-      <pubDate>Thu, 24 Dec 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
       <media:content url="https://texan-inaugurals.netlify.app/posts/3-keywords/key.png" medium="image" type="image/png" width="700" height="280"/>
     </item>
     <item>
@@ -42,7 +42,7 @@ some quantitative analyses of selected language features.
       <link>https://texan-inaugurals.netlify.app/posts/4-complexity</link>
       <description>The use of and/or versus other conjunctions.</description>
       <guid>https://texan-inaugurals.netlify.app/posts/4-complexity</guid>
-      <pubDate>Wed, 23 Dec 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
       <media:content url="https://texan-inaugurals.netlify.app/posts/4-complexity/complexity.png" medium="image" type="image/png" width="700" height="280"/>
     </item>
     <item>
@@ -51,7 +51,7 @@ some quantitative analyses of selected language features.
       <link>https://texan-inaugurals.netlify.app/posts/5-pos</link>
       <description>The frequency of various parts of speech.</description>
       <guid>https://texan-inaugurals.netlify.app/posts/5-pos</guid>
-      <pubDate>Tue, 22 Dec 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
       <media:content url="https://texan-inaugurals.netlify.app/posts/5-pos/bricks.png" medium="image" type="image/png" width="700" height="280"/>
     </item>
     <item>
@@ -60,7 +60,7 @@ some quantitative analyses of selected language features.
       <link>https://texan-inaugurals.netlify.app/posts/6-sentiment</link>
       <description>A sentiment analysis of the speeches.</description>
       <guid>https://texan-inaugurals.netlify.app/posts/6-sentiment</guid>
-      <pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
       <media:content url="https://texan-inaugurals.netlify.app/posts/6-sentiment/sentiments.png" medium="image" type="image/png" width="700" height="280"/>
     </item>
   </channel>

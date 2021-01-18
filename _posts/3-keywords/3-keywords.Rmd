@@ -4,9 +4,9 @@ description: |
   Which terms are frequent in the inaugurals of US Presidents from Texas, and which are significant?
 author:
   - name: Lars Hinrichs
-    url: https://larshinrichs.site
+    url: http://larshinrichs.site
     affiliation: The University of Texas at Austin
-date: 12-24-2020
+date: 01-20-2021
 draft: false
 preview: key.png
 slug: keywords-tf-idf

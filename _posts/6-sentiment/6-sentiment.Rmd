@@ -4,10 +4,9 @@ description: |
   A sentiment analysis of the speeches.
 author:
   - name: Lars Hinrichs
-    url: https://larshinrichs.site
+    url: http://larshinrichs.site
     affiliation: The University of Texas at Austin
-    affiliation_url: https://liberalarts.utexas.edu/english
-date: 12-21-2020
+date: 01-20-2021
 preview: sentiments.png
 output:
   distill::distill_article:

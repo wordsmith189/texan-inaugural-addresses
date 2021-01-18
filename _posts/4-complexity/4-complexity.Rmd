@@ -4,8 +4,9 @@ description: |
   The use of and/or versus other conjunctions.
 author:
   - name: Lars Hinrichs
-    url: https://larshinrichs.site
-date: 12-23-2020
+    url: http://larshinrichs.site
+    affiliation: The University of Texas at Austin
+date: 01-20-2021
 draft: false
 preview: complexity.png
 output:
