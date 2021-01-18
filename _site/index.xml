@@ -8,14 +8,14 @@
 some quantitative analyses of selected language features.
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Fri, 25 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jan 2021 00:00:00 +0000</lastBuildDate>
     <item>
       <title>1 The Data</title>
       <dc:creator>Lars Hinrichs</dc:creator>
       <link>https://texan-inaugurals.netlify.app/posts/1-the-data</link>
       <description>Scope, source, and preparation of the data. The texts are taken from the R-package "quanteda".</description>
       <guid>https://texan-inaugurals.netlify.app/posts/1-the-data</guid>
-      <pubDate>Fri, 25 Dec 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
       <media:content url="https://texan-inaugurals.netlify.app/posts/1-the-data/inaug.png" medium="image" type="image/png" width="700" height="280"/>
     </item>
     <item>
@@ -24,7 +24,7 @@ some quantitative analyses of selected language features.
       <link>https://texan-inaugurals.netlify.app/posts/2-numeric-measures</link>
       <description>Sentence length, number of words, etc.</description>
       <guid>https://texan-inaugurals.netlify.app/posts/2-numeric-measures</guid>
-      <pubDate>Fri, 25 Dec 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
       <media:content url="https://texan-inaugurals.netlify.app/posts/2-numeric-measures/measures.png" medium="image" type="image/png" width="700" height="280"/>
     </item>
     <item>

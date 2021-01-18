@@ -4,9 +4,9 @@ description: |
   Scope, source, and preparation of the data. The texts are taken from the R-package "quanteda".
 author:
   - name: Lars Hinrichs
-    url: https://larshinrichs.site
+    url: http://larshinrichs.site
     affiliation: The University of Texas at Austin
-date: 12-25-2020
+date: 01-20-2021
 preview: inaug.png
 output:
   distill::distill_article:
