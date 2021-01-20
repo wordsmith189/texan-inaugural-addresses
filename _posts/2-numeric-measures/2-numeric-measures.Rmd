@@ -33,7 +33,7 @@ corpus <- import("../../data/corpus.RDS")
 Here is the overall length of each address.
 
 ```{r}
-pal <- wesanderson::wes_palette("GrandBudapest1", 3)
+pal <- wesanderson::wes_palette("GrandBudapest1", 4)
 
 nwords <- 
   corpus %>% 

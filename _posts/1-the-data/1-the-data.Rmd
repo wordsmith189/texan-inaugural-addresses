@@ -31,16 +31,32 @@ We analyze the inaugural addresses of the "Texan" presidents. These are
 -   George H.W. Bush (1)
 -   George W. Bush (2)
 
+
 To justify this choice, it is important to note that we are interested in "culturally" Texan presidents. If we were interested in place of birth, we'd also have to include Eisenhower (born in TX but didn't live there), and not the Bushes (born outside of TX but lived there).
+
+We will also be adding **Joseph R. Biden's** inaugural speech to the mix, for comparison.
 
 ![Bush 45's second inauguration. (Image from Wikimedia Commons.)](inaug.png){width="60%"}
 
 ## Source of the data
 
-We're using the version of the speeches that is included in the `quanteda` R-package [@benoit2018]. The following code grabs the speeches from the package in the `corpus` data format, then converts it to a regular dataframe.
+We're using the version of the speeches that is included in the `quanteda` R-package [@benoit2018]. The following code grabs the speeches from the package in the `corpus` data format, then converts it to a regular dataframe. - Biden's speech was taken from the transcript published by the *Washington Post* about two hours after 2021 inauguration.
 
 ```{r get-data, echo=T}
+bidentxt <- readLines("../../biden-2021.txt") %>%
+  paste(collapse=" ") %>% 
+  str_trim()
+
+biden <- tibble(doc_id = "2021-Biden", 
+                text = bidentxt, 
+                year = 2021, 
+                president = "Biden", 
+                first_name = "Joseph R.", 
+                party = "Democratic", 
+                nickname = "Joe")
+
 txpres <- c("Johnson", "Bush")
+
 corpus <- data_corpus_inaugural %>% 
   quanteda::convert(to = "data.frame") %>% 
   filter(President %in% txpres) %>% 
@@ -51,13 +67,18 @@ corpus <- data_corpus_inaugural %>%
   )) %>% 
   janitor::clean_names()
 
+corpus <- 
+  corpus %>% 
+  rbind(biden)
+
 corpus %>% 
   mutate(text = str_sub(text, 1, 40)) %>% 
   as_tibble() %>% 
   kbl() %>% 
   kable_paper()
-```
 
+```
+<p> <br>
 Down the line, this data can be tokenized and/or marked up as needed. We'll save this version so we can come back to it.
 
 ```{r save-data}

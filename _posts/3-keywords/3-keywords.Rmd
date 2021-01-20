@@ -37,7 +37,7 @@ For the first analysis we'll remove stopwords (see a [definition of stopwords he
 
 ```{r make-plots}
 pal <- wesanderson::wes_palette("Zissou1", 5, 
-                                type="continuous")[2:5]
+                                type="continuous")
 
 inaugurals_words <- 
   corpus %>% 
@@ -72,6 +72,8 @@ docs <- inaugurals_toplot %>%
   as.character() %>% 
   unique()
 
+docs <- docs[c(4,5,3,2,1)]
+
 pfunct <- 
   function(dat, i){ 
   dat %>%
@@ -101,15 +103,16 @@ pfunct <-
 
 ```
 
-```{r printplots1-4, layout="l-page", fig.height=3, fig.cap="Top 15 terms in each Texan inaugural address by frequency."}
-p1 <- pfunct(inaugurals_toplot, 3)
-p2 <- pfunct(inaugurals_toplot, 4)
-p3 <- pfunct(inaugurals_toplot, 2)
-p4 <- pfunct(inaugurals_toplot, 1)
-g1 <- plot_grid(p1, p2, p3, p4, nrow=1)
+```{r printplots1-5, layout="l-body-outset", fig.height=5, fig.cap="Top 15 terms in each inaugural address by frequency."}
+p1 <- pfunct(inaugurals_toplot, 1)
+p2 <- pfunct(inaugurals_toplot, 2)
+p3 <- pfunct(inaugurals_toplot, 3)
+p4 <- pfunct(inaugurals_toplot, 4)
+p5 <- pfunct(inaugurals_toplot, 5)
+g1 <- plot_grid(p1, p2, p3, p4, p5, NULL, nrow=2)
 g2 <- g1 %>% 
   add_sub("www.texasenglish.org",
-          x = 1, hjust = 1,
+          x = 1, hjust = 0,
           fontfamily="Volkhov-Regular",
           size=6)
 ggdraw(g2)
@@ -160,15 +163,16 @@ pfunct2 <-
 }
 ```
 
-```{r printplots5-8, layout="l-page", fig.height=3, fig.cap="Top 15 terms in each Texan inaugural address by tf-idf."}
-p5 <- pfunct2(inaugurals_tf_idf, 3)
-p6 <- pfunct2(inaugurals_tf_idf, 4)
+```{r printplots5-8, layout="l-body-outset", fig.height=5, fig.cap="Top 15 terms in each inaugural address by tf-idf."}
+p6 <- pfunct2(inaugurals_tf_idf, 1)
 p7 <- pfunct2(inaugurals_tf_idf, 2)
-p8 <- pfunct2(inaugurals_tf_idf, 1)
-g3 <- plot_grid(p5, p6, p7, p8, nrow=1) 
+p8 <- pfunct2(inaugurals_tf_idf, 3)
+p9 <- pfunct2(inaugurals_tf_idf, 4)
+p10 <- pfunct2(inaugurals_tf_idf, 5)
+g3 <- plot_grid(p6, p7, p8, p9, p10, NULL, nrow=2) 
 g4 <- g3 %>% 
   add_sub("www.texasenglish.org",
-          x = 1, hjust = 1,
+          x = 1, hjust = 0,
           fontfamily="Volkhov-Regular",
           size=6)
 ggdraw(g4)

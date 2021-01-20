@@ -1464,14 +1464,28 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>George W. Bush (2)</li>
 </ul>
 <p>To justify this choice, it is important to note that we are interested in “culturally” Texan presidents. If we were interested in place of birth, we’d also have to include Eisenhower (born in TX but didn’t live there), and not the Bushes (born outside of TX but lived there).</p>
+<p>We will also be adding <strong>Joseph R. Biden’s</strong> inaugural speech to the mix, for comparison.</p>
 <figure>
 <img src="inaug.png" style="width:60.0%" alt="Bush 45’s second inauguration. (Image from Wikimedia Commons.)" /><figcaption aria-hidden="true">Bush 45’s second inauguration. (Image from Wikimedia Commons.)</figcaption>
 </figure>
 <h2 id="source-of-the-data">Source of the data</h2>
-<p>We’re using the version of the speeches that is included in the <code>quanteda</code> R-package <span class="citation" data-cites="benoit2018">(<a href="#ref-benoit2018" role="doc-biblioref">Benoit et al. 2018</a>)</span>. The following code grabs the speeches from the package in the <code>corpus</code> data format, then converts it to a regular dataframe.</p>
+<p>We’re using the version of the speeches that is included in the <code>quanteda</code> R-package <span class="citation" data-cites="benoit2018">(<a href="#ref-benoit2018" role="doc-biblioref">Benoit et al. 2018</a>)</span>. The following code grabs the speeches from the package in the <code>corpus</code> data format, then converts it to a regular dataframe. - Biden’s speech was taken from the transcript published by the <em>Washington Post</em> about two hours after 2021 inauguration.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre><code><span class='va'>txpres</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Johnson"</span>, <span class='st'>"Bush"</span><span class='op'>)</span>
+<pre><code><span class='va'>bidentxt</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/readLines.html'>readLines</a></span><span class='op'>(</span><span class='st'>"../../biden-2021.txt"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span>collapse<span class='op'>=</span><span class='st'>" "</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>str_trim</span><span class='op'>(</span><span class='op'>)</span>
+
+<span class='va'>biden</span> <span class='op'>&lt;-</span> <span class='fu'>tibble</span><span class='op'>(</span>doc_id <span class='op'>=</span> <span class='st'>"2021-Biden"</span>, 
+                text <span class='op'>=</span> <span class='va'>bidentxt</span>, 
+                year <span class='op'>=</span> <span class='fl'>2021</span>, 
+                president <span class='op'>=</span> <span class='st'>"Biden"</span>, 
+                first_name <span class='op'>=</span> <span class='st'>"Joseph R."</span>, 
+                party <span class='op'>=</span> <span class='st'>"Democratic"</span>, 
+                nickname <span class='op'>=</span> <span class='st'>"Joe"</span><span class='op'>)</span>
+
+<span class='va'>txpres</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Johnson"</span>, <span class='st'>"Bush"</span><span class='op'>)</span>
+
 <span class='va'>corpus</span> <span class='op'>&lt;-</span> <span class='va'>data_corpus_inaugural</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>quanteda</span><span class='fu'>::</span><span class='fu'><a href='https://quanteda.io/reference/convert.html'>convert</a></span><span class='op'>(</span>to <span class='op'>=</span> <span class='st'>"data.frame"</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
   <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>President</span> <span class='op'>%in%</span> <span class='va'>txpres</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
@@ -1481,6 +1495,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     <span class='cn'>TRUE</span> <span class='op'>~</span> <span class='st'>"Bush43"</span>
   <span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>janitor</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/janitor/man/clean_names.html'>clean_names</a></span><span class='op'>(</span><span class='op'>)</span>
+
+<span class='va'>corpus</span> <span class='op'>&lt;-</span> 
+  <span class='va'>corpus</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>rbind</a></span><span class='op'>(</span><span class='va'>biden</span><span class='op'>)</span>
 
 <span class='va'>corpus</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>mutate</span><span class='op'>(</span>text <span class='op'>=</span> <span class='fu'>str_sub</span><span class='op'>(</span><span class='va'>text</span>, <span class='fl'>1</span>, <span class='fl'>40</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
@@ -1608,10 +1626,34 @@ Republican
 Bush43
 </td>
 </tr>
+<tr>
+<td style="text-align:left;">
+2021-Biden
+</td>
+<td style="text-align:left;">
+Chief Justice Roberts, Vice President Ha
+</td>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;">
+Biden
+</td>
+<td style="text-align:left;">
+Joseph R.
+</td>
+<td style="text-align:left;">
+Democratic
+</td>
+<td style="text-align:left;">
+Joe
+</td>
+</tr>
 </tbody>
 </table>
 </div>
-<p>Down the line, this data can be tokenized and/or marked up as needed. We’ll save this version so we can come back to it.</p>
+<p>
+<p><br> Down the line, this data can be tokenized and/or marked up as needed. We’ll save this version so we can come back to it.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
