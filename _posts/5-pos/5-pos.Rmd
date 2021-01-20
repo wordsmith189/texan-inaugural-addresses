@@ -74,7 +74,7 @@ beepr::beep(sound = 2, expr = NULL)
 
 ```{r show-data}
 corpus_postagged <- 
-  rio::import("data/corpus_postagged.RDS")
+  rio::import("../../data/corpus_postagged.RDS")
 corpus_postagged %>% 
   head(10) %>% 
   select(-party, -nickname, -first_name) %>% 

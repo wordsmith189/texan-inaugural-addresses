@@ -17,14 +17,14 @@ bibliography: references.bib
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
-                      cache = TRUE,
+                      cache = F,
                       cache.lazy = FALSE)
 library(pacman)
 
 p_load(rio, dplyr, ggplot2, stringr, knitr, 
        kableExtra, beepr, tidytext)
 
-corpus <- import("data/corpus_postagged.RDS")
+corpus <- rio::import("../../data/corpus_postagged.RDS")
 ```
 
 ![Words are like eggs: some are happy, some are sad. <br>(Image from Tengyart/unsplash.com.)](sentiments.png){width="60%"}
@@ -35,7 +35,7 @@ In sentiment analysis, each word is scored for its emotional base value. Some wo
 
 ### Global Scores per Speech
 
-The first plot gives a comparison of pos. and neg. scores for each inaugural.
+The first plot gives a comparison of positive and negative scores for each inaugural.
 
 ```{r viz-sentiment}
 n_total <- 
@@ -67,7 +67,7 @@ n_sent %>%
   scale_fill_manual(values = pal) +
   labs(
     title = "Emotionally Loaded Words in Texan Inaugurals",
-    subtitle = "Frequencies per 1,000 words",
+    subtitle = "And Biden's for Comparison. Frequencies per 1,000 Words.",
     x = NULL, y = NULL,
     caption = "www.texasenglish.org"
   ) +
@@ -106,14 +106,14 @@ terms_pos <-
   arrange(doc_id, freq) %>%
   mutate(order = row_number())
 
-pal <- wesanderson::wes_palette("Darjeeling2", 4, type = "discrete")
+pal <- wesanderson::wes_palette("Darjeeling2", 5, type = "discrete")
 
 terms_pos %>% 
   ggplot(aes(order, freq, fill=doc_id)) +
   geom_col(show.legend = F) +
   scale_fill_manual(values = pal) +
   labs(title = "Most Frequent Positive Sentiment Words in Texan Inaugurals",
-       subtitle = "Frequencies per 1,000 words",
+       subtitle = "And Biden's for Comparison. Frequencies per 1,000 Words.",
        x = NULL, y = NULL, caption = "www.texasenglish.org") +
   scale_x_continuous(
     breaks = terms_pos$order,
@@ -164,7 +164,7 @@ terms_neg %>%
   geom_col(show.legend = F) +
   scale_fill_manual(values = pal) +
   labs(title = "Most Frequent Negative Sentiment Words in Texan Inaugurals",
-       subtitle = "Frequencies per 1,000 words",
+       subtitle = "And Biden's for Comparison. Frequencies per 1,000 Words.",
        x = NULL, y = NULL, 
        caption = "www.texasenglish.org") +
   facet_wrap(~doc_id,
@@ -204,7 +204,7 @@ n_sent %>%
   geom_col(width = .4,
            show.legend = F) +
   scale_fill_manual(values = pal) +
-  labs(title = "Sentiment Ratio in Texan Inaugurals",
+  labs(title = "Sentiment Ratio in Inaugural Speeches",
        subtitle = 
          expression(italic("N") [positive] / italic("N") [negative]),
        x=NULL,
@@ -212,8 +212,6 @@ n_sent %>%
   theme_bw(base_family = "Volkhov-Regular",
            base_size = 10) 
 ```
-
-
 ## Interpretation
 
 Once again, 2005-Bush stands out: it has by far the highest frequency of emotionally loaded terms out of all four speeches. When we look closer, we see that much of this is attributable to the hyper-frequent use of **freedom** and **free**.
