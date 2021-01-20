@@ -2,7 +2,8 @@ name: "Texan Inaugural Addresses"
 title: "Texan Inaugural Addresses"
 description: |
   Inaugural Addresses by US Presidents from Texas under a computational-rhetoric lense: 
-  some quantitative analyses of selected language features.
+  some quantitative analyses of selected language features. Includes a comparison with 
+  Joe Biden's 2021 inaugural speech.
 output_dir: "_site"
 base_url: https://texan-inaugurals.netlify.app
 google_analytics: "UA-5137412-19"
