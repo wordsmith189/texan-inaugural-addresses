@@ -5,7 +5,8 @@
     <link>https://texan-inaugurals.netlify.app</link>
     <atom:link href="https://texan-inaugurals.netlify.app/index.xml" rel="self" type="application/rss+xml"/>
     <description>Inaugural Addresses by US Presidents from Texas under a computational-rhetoric lense: 
-some quantitative analyses of selected language features.
+some quantitative analyses of selected language features. Includes a comparison with 
+Joe Biden's 2021 inaugural speech.
 </description>
     <generator>Distill</generator>
     <lastBuildDate>Wed, 20 Jan 2021 00:00:00 +0000</lastBuildDate>
@@ -13,7 +14,7 @@ some quantitative analyses of selected language features.
       <title>1 The Data</title>
       <dc:creator>Lars Hinrichs</dc:creator>
       <link>https://texan-inaugurals.netlify.app/posts/1-the-data</link>
-      <description>Scope, source, and preparation of the data. The texts are taken from the R-package "quanteda".</description>
+      <description>Scope, source, and preparation of the data. The older texts are taken from the R-package "quanteda". Biden's is taken from the Washington Post's transcript.</description>
       <guid>https://texan-inaugurals.netlify.app/posts/1-the-data</guid>
       <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
       <media:content url="https://texan-inaugurals.netlify.app/posts/1-the-data/inaug.png" medium="image" type="image/png" width="700" height="280"/>
