@@ -17,7 +17,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
-                      cache = T)
+                      cache = F)
 library(pacman)
 p_load(tidyverse, tidytext, tm, quanteda,
        knitr, kableExtra, rio)
@@ -66,8 +66,9 @@ andbutcounts %>%
   kable_paper()
 ```
 
-```{r viz-andbut}
-pal <- wesanderson::wes_palette("Darjeeling2", 4)
+```{r viz-andbut, fig.height=4.5}
+pal <- wesanderson::wes_palette("Darjeeling2", 5)
+
 andbutcounts %>% 
   ggplot(aes(x=word,
              y=freq,
@@ -80,7 +81,8 @@ andbutcounts %>%
   scale_fill_manual(values = pal) +
   theme_bw(base_family = "Volkhov-Regular",
                   base_size = 10) +
-  facet_wrap(~doc_id, nrow=1)
+  facet_wrap(~doc_id, nrow=2) +
+  theme(plot.caption = element_text(hjust = 0))
 
 ```
 
@@ -129,7 +131,7 @@ So to gain perspective let's visualize three figures per speech:
 
 -   all subordinators combined.
 
-```{r viz-conj-groups, layout="l-body-outset"}
+```{r viz-conj-groups, layout="l-body-outset", fig.height=5}
 conjgroups <- 
   conjunctioncounts %>% 
   mutate(group = 
@@ -150,10 +152,11 @@ conjgroups %>%
   geom_col(show.legend = F,
            width = .45,
            position = "dodge") +
-  facet_wrap(~doc_id, nrow = 1) +
+  facet_wrap(~doc_id, nrow = 2) +
   scale_fill_manual(values=pal) +
   labs(
     title = "Conjunctions in Texan Inaugurals",
+    subtitle = "And Biden's for Comparison",
     x = "",
     y = "per 1,000 words",
     caption = "www.texasenglish.org") +
@@ -161,7 +164,9 @@ conjgroups %>%
                 base_size = 10) +   
   theme(axis.text.x = element_text(angle=25,
                                    vjust=0.6),
-        axis.title.y = element_text(size=8))
+        axis.title.y = element_text(size=8),
+        plot.caption = element_text(hjust = 0)
+        )
 
 ```
 

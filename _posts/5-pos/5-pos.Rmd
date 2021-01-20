@@ -17,7 +17,7 @@ bibliography: references.bib
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
-                      cache = TRUE,
+                      cache = F,
                       cache.lazy = FALSE)
 library(pacman)
 p_load(rio, dplyr, ggplot2, stringr, knitr, kableExtra,
@@ -110,9 +110,9 @@ The unit of analysis will be frequency per 1,000 words, to make the numbers comp
 
 The following plot shows these values ordered by POS-tag.
 
-```{r show-freqs-panel, fig.cap="Comparison of POS frequencies.", layout="l-body-outset"}
+```{r show-freqs-panel, fig.cap="Comparison of POS frequencies.", layout="l-body-outset", fig.height=5}
 
-pal <- wesanderson::wes_palette("Darjeeling2", 4, type = "discrete")
+pal <- wesanderson::wes_palette("Darjeeling2", 5, type = "discrete")
 
 upos <- n_pos %>% pull(upos) %>% unique()
 
@@ -140,17 +140,17 @@ n_pos %>%
              ) +
   labs(
     title = "Parts of Speech in Texan Inaugurals",
-    subtitle = "Frequencies per 1,000 words",
+    subtitle = "And Biden's for Comparison. Showing Frequencies per 1,000 Words.",
     x = NULL, y = NULL,
        caption = "www.texasenglish.org") +
   scale_fill_manual(values = pal) +
   theme_bw(base_family = "Volkhov-Regular",
-                  base_size = 10) +
+                  base_size = 9) +
   theme(axis.text.x = element_blank(),
         legend.title = element_blank(),
         panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank(),
-        strip.text = element_text(size=7),
+        strip.text = element_text(size=6.5),
         plot.title.position = "plot",
         plot.caption = element_text(hjust = 0),
         plot.caption.position =  "plot"
@@ -212,13 +212,13 @@ n_posgroup %>%
            position = "dodge") +
   scale_fill_manual(values=pal) +
   labs(title="Nominal vs. Verbal Style in Texan Inaugurals",
-       subtitle="Frequencies per 100 words",
+       subtitle="And Biden's for Comparison. Showing Frequencies per 100 Words.",
        x=NULL, y=NULL,
        caption="www.texasenglish.org"
        ) +
   facet_wrap(~doc_id, nrow=1) +
   theme_bw(base_family = "Volkhov-Regular",
-                  base_size = 10) +
+                  base_size = 9) +
   theme(legend.title = element_blank(),
         panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank(),
@@ -308,7 +308,7 @@ n_pron %>%
            width = .45) +
   labs(
     title = "Pronouns in Texan Inaugurals",
-    subtitle = "Frequencies per 1,000 words",
+    subtitle = "And Biden's for Comparison. Showing Frequencies per 1,000 Words.",
     x=NULL, y=NULL,
     caption = "www.texasenglish.org"
   ) +
