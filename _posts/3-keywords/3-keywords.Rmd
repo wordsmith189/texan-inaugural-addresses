@@ -109,7 +109,7 @@ p2 <- pfunct(inaugurals_toplot, 2)
 p3 <- pfunct(inaugurals_toplot, 3)
 p4 <- pfunct(inaugurals_toplot, 4)
 p5 <- pfunct(inaugurals_toplot, 5)
-g1 <- plot_grid(p1, p2, p3, NULL, p4, p5, nrow=2)
+g1 <- plot_grid(p1, p2, NULL, p3, p4, p5, nrow=2)
 g2 <- g1 %>% 
   add_sub("www.texasenglish.org",
           x = 1, hjust = 1,
@@ -169,7 +169,7 @@ p7 <- pfunct2(inaugurals_tf_idf, 2)
 p8 <- pfunct2(inaugurals_tf_idf, 3)
 p9 <- pfunct2(inaugurals_tf_idf, 4)
 p10 <- pfunct2(inaugurals_tf_idf, 5)
-g3 <- plot_grid(p6, p7, p8, NULL, p9, p10, nrow=2) 
+g3 <- plot_grid(p6, p7, NULL, p8, p9, p10, nrow=2) 
 g4 <- g3 %>% 
   add_sub("www.texasenglish.org",
           x = 1, hjust = 1,
