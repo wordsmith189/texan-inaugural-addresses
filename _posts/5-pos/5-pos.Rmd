@@ -250,7 +250,7 @@ It will be of interest to see which pronouns prevail in the four speeches. We wi
 ```{r def-pron-classes, echo=T}
 s1 <- c("i", "my", "me", "myself")
 
-sp2 <- c("you", "your", "yourself")
+sp2 <- c("you", "your")
 
 s3 <- c("he", "she", "it", "his", "her", "its", "him",
         "himself", "herself", "itself", "something",
@@ -265,7 +265,7 @@ p3 <- c("they", "their", "them", "themselves")
 
 Some notes:
 
--   The form *yourselves* does not occur in any of the speeches.
+-   The forms *yourself/yourselves* do not occur in any of the speeches.
 
 -   Otherwise, the *you*-forms do not differ between singular and plural; therefore there is only one class for the second person.
 
