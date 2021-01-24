@@ -7,7 +7,6 @@ author:
     url: http://larshinrichs.site
     affiliation: The University of Texas at Austin
 date: 01-20-2021
-draft: false
 preview: key.png
 slug: keywords-tf-idf
 output:
@@ -26,7 +25,7 @@ p_load(tidyverse, tidytext, tm, quanteda,
 ```
 
 
-<mark>[Click here](https://www.texasstandard.org/stories/change-human-and-truth-how-a-presidents-unique-inaugural-word-choices-reflect-the-world-as-it-is/) to listen to the Texan Translation segment on KUT Public Radio in which the research presented here was discussed (aired on 21 January, 2021).</mark>
+<mark>[Click here](https://www.texasstandard.org/stories/change-human-and-truth-how-a-presidents-unique-inaugural-word-choices-reflect-the-world-as-it-is/) to listen to the Texan Translation segment on KUT Public Radio in which the research presented here was discussed (aired on 22 January, 2021).</mark>
 
 ![Words are key. (Image from everyday basics/unsplash.com.)](key.png){width="60%"}
 
